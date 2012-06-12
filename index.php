@@ -17,7 +17,7 @@
 
 	<article>
 		<section>
-			
+			<p>Mijn website</p>
 		</section>
 	</article>
 
