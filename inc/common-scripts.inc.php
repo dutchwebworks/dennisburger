@@ -1,3 +1,5 @@
+<?php if(ENABLE_GA) { ?>
+
 <!-- Google Analytics -->
 <script> // Change UA-XXXXX-X to be your site's ID
 var _gaq=[["_setAccount","UA-32526017-1"],["_trackPageview"]];
@@ -5,3 +7,5 @@ var _gaq=[["_setAccount","UA-32526017-1"],["_trackPageview"]];
 g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
 s.parentNode.insertBefore(g,s)}(document,"script"));
 </script>
+
+<?php } ?>
