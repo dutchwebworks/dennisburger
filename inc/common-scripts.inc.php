@@ -1,11 +1,16 @@
-<?php if(ENABLE_GA) { ?>
+<?php if($enable_ga) { ?>
 
 <!-- Google Analytics -->
-<script> // Change UA-XXXXX-X to be your site's ID
-var _gaq=[["_setAccount","UA-32526017-1"],["_trackPageview"]];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-s.parentNode.insertBefore(g,s)}(document,"script"));
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-32526017-1']);
+_gaq.push(['_setDomainName', 'dennisburger.nl']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
 
 <?php } ?>

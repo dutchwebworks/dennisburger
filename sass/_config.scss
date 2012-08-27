@@ -1,0 +1,38 @@
+// SASS configuration
+
+// Fonts
+$font-default-headings: 'Tinos', serif;
+$font-default-body: Georgia, serif;
+
+$font-default-size: 100%;
+$font-default-line-height: 25px;
+
+// Colors
+$color-primary: #132133;
+$color-secondary: #33270E;
+$color-supplementary: #f99;
+$color-complementary: adjust-hue($color-primary, 180);
+
+$color-heading-text: $color-secondary;
+$color-body-text: $color-primary;
+
+// MediaQuery breakpoints
+$mq-breakpoint-01: 321px;
+$mq-breakpoint-02: 500px;
+$mq-breakpoint-03: 781px;
+$mq-breakpoint-04: 1025px;
+
+// Vars
+$site-max-width: 700px;
+
+// Grid units
+$grid-site-width: 100%;
+$grid-column-count: 12;
+$grid-gutter-width: 2%;
+$grid-column-width: ($grid-site-width - ($grid-column-count - 1) * $grid-gutter-width) / $grid-column-count;
+
+// Importing other files
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_reset.scss';
+@import '_grid.scss';

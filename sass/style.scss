@@ -1,0 +1,119 @@
+@import '_config.scss';
+
+/* Common
+==================================== */
+
+body {
+	font-family: $font-default-body;
+	font-size: $font-default-size;
+	line-height: $font-default-line-height;
+	color: $color-body-text;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-default-headings;	
+	line-height: normal;
+	font-weight: 700;
+	font-style: italic;
+	color: $color-heading-text;
+}
+
+h2, h3, h4, h5, h6 {
+	margin-top: 3em;
+	margin-bottom: .5em;
+}
+
+h2, h3, h4, h5, h6, p, li, dd {
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1 {
+	font-size: 2em;
+	margin-top: 0;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+h1 + h2 {
+	margin-top: 0;
+}
+
+h3 {
+	font-size: 1.50em;
+}
+
+h4, h5, h6 {
+	font-size: 1.25em;
+	color: $color-secondary;
+}
+
+p, li, dt, dd {
+	font-size: 1em;
+}
+
+ul, ol {
+	padding-left: 1.5em;
+}
+
+a {
+	color: $color-primary;
+}
+
+/* Wrappers
+==================================== */
+
+#header .inner,
+#main,
+#footer .inner {
+	width: auto;
+	margin-top: 0;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 1em;
+	padding: .5em 0;
+
+	@media (min-width: $site-max-width) {
+		width: $site-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+#footer .inner {
+	margin-bottom: 0;
+}
+
+/* Header
+==================================== */
+
+#header {
+	margin-bottom: 1.5em;
+
+	h1 {
+		margin: 0;
+	}
+}
+
+#header,
+#footer {
+	background-color: #eee;
+}
+
+#main {
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 2em;
+	padding-bottom: 0;
+}
+
+.block {
+	background-color: pink;
+	min-height: 100px;
+}
