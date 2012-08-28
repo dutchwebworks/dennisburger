@@ -1,3 +1,11 @@
+<script>
+	if(Modernizr.mq("(max-width: 321px)")) {
+		console.log('true');
+	} else {
+		console.log('false');
+	}
+</script>
+
 <?php if($enable_ga) { ?>
 
 <!-- Google Analytics -->
