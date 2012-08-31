@@ -90,7 +90,7 @@ a {
 	margin-bottom: 0;
 }
 
-/* Header & footer
+/* Header
 ==================================== */
 
 #header {
@@ -106,12 +106,14 @@ a {
 	background-color: #eee;
 }
 
-/* Main
-==================================== */
-
 #main {
 	margin-top: 0;
 	padding-top: 0;
 	margin-bottom: 2em;
 	padding-bottom: 0;
+}
+
+.block {
+	background-color: pink;
+	min-height: 100px;
 }
