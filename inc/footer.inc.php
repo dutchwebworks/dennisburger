@@ -1,6 +1,4 @@
 
 <footer id="footer">
-	<div class="inner">
-		<p>&copy; dennisburger.nl</p>
-	</div>
+	<p>&copy; dennisburger.nl</p>
 </footer>

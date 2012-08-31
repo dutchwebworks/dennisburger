@@ -5,15 +5,15 @@ $font-default-headings: 'Tinos', serif;
 $font-default-body: Georgia, serif;
 
 $font-default-size: 100%;
-$font-default-line-height: 25px;
+$font-default-line-height: 1.5em;
 
 // Colors
-$color-primary: #132133;
-$color-secondary: #33270E;
+$color-primary: #4d4d4d;
+$color-secondary: #ec008c;
 $color-supplementary: #f99;
-$color-complementary: adjust-hue($color-primary, 180);
+$color-complementary: complement($color-primary);
 
-$color-heading-text: $color-secondary;
+$color-heading-text: #00aeef;
 $color-body-text: $color-primary;
 
 // MediaQuery breakpoints
@@ -23,7 +23,7 @@ $mq-breakpoint-03: 781px;
 $mq-breakpoint-04: 1025px;
 
 // Vars
-$site-max-width: 700px;
+$site-max-width: 500px;
 
 // Grid units
 $grid-site-width: 100%;

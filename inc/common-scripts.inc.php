@@ -1,9 +1,20 @@
+<script src="/js/zepto.1.0.min.js"></script>
+<!-- <script src="/js/jquery.1.8.1.min.js"></script> -->
+
 <script>
-	if(Modernizr.mq("(max-width: 321px)")) {
-		console.log('true');
-	} else {
-		console.log('false');
-	}
+$(document).ready(function() {
+	$(window).resize(function() {
+		// Check CSS3 MediaQuery, and remove inline style
+		// this re-enables the menu when resizing the webbrowser manually
+		if(Modernizr.mq('(min-width: 500px)')) {
+			$('#navigation').removeAttr('style');
+		}
+	});
+
+	$('#showMenu').click(function() {
+		$('#navigation').toggle();
+	});
+});	
 </script>
 
 <?php if($enable_ga) { ?>
