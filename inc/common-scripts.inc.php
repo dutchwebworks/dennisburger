@@ -9,24 +9,23 @@ var mqbreakpoint01 = 500;
 var Utils = {
 	q : function(q, res) {
 		if (document.querySelectorAll) {
-          res = document.querySelectorAll(q);
-        } else {
+			res = document.querySelectorAll(q);
+		} else {
 			var d = document,
-            a = d.styleSheets[0] || d.createStyleSheet();
-          a.addRule(q,'f:b');
-          for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
-            l[b].currentStyle.f && c.push(l[b]);
+			a = d.styleSheets[0] || d.createStyleSheet();
+			a.addRule(q,'f:b');
+			for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
+			l[b].currentStyle.f && c.push(l[b]);
 
-          a.removeRule(0);
-          res = c;
-        }
-        return res;
+			a.removeRule(0);
+			res = c;
+		}
+		return res;
 	},
 }
 
 // Document load
 $(document).ready(function() {
-
 	// When the window resizes
 	$(window).resize(function() {
 		// Check CSS3 MediaQuery, and remove inline style

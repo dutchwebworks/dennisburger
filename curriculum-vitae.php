@@ -64,12 +64,9 @@
 <script>
 // Document load
 $(document).ready(function() {
-	// Check within media query breakpoint 1
+	// Check for greater viewport width than CSS3 MediaQuery 1
 	if(Modernizr.mq('(min-width: ' + mqbreakpoint01 + 'px)')) {
-		// remove the inline style to show the navigation menu
-		$('#navigation').removeAttr('style');
-
-		// Lazy load images on wider screens in CV page
+		// Lazy load images
 		var lazy = Utils.q('[data-src]');
 		for (var i = 0; i < lazy.length; i++) {
 			var source = lazy[i].getAttribute('data-src');
@@ -78,7 +75,7 @@ $(document).ready(function() {
 			img.src = source;
 			//insert it inside of the link
 			lazy[i].insertBefore(img, lazy[i].firstChild);
-		};					
+		};
 	}	
 });	
 </script>
