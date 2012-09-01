@@ -8,10 +8,10 @@ $font-default-size: 100%;
 $font-default-line-height: 1.5em;
 
 // Colors
-$color-primary: #4d4d4d;
-$color-secondary: #ec008c;
+$color-primary: #666;
+$color-secondary: #ff5200;
 $color-supplementary: #f99;
-$color-complementary: complement($color-primary);
+$color-complementary: $color-secondary;
 
 $color-heading-text: #00aeef;
 $color-body-text: $color-primary;

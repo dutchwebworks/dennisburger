@@ -23,10 +23,11 @@
 	RewriteRule ^webdesign(/)?$ webdesign.php [L]
 	RewriteRule ^fotografie(/)?$ fotografie.php [L]
 	RewriteRule ^aikido(/)?$ aikido.php [L]
+	RewriteRule ^curriculum-vitae(/)?$ curriculum-vitae.php [L]
 
 	########################################
-	## Simple redirects / landing pages
-	########################################	
+	## Simple redirects
+	########################################
 
 	Redirect 301 /flickr http://www.flickr.com/photos/dennisburger
 	
@@ -62,7 +63,7 @@
 	########################################
 
 	#Header unset ETag
-	#FileETag None
+	FileETag None
 </IfModule>
 
 #################################

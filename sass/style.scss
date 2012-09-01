@@ -193,6 +193,52 @@ a {
 	padding-bottom: 0;
 }
 
+/* CV list
+==================================== */
+
+#cvWebsites {
+	list-style:none;
+	margin:0;
+	padding:0;
+	overflow: hidden;
+
+
+	li {
+		clear:both;
+		overflow:hidden;
+		margin-bottom: 1em;
+		padding-bottom: 1em;
+		border-bottom: 1px dotted #ccc;
+
+		h3 {
+			margin: 0;
+
+			a {
+				color: $color-secondary;
+				text-decoration:none;
+			}
+		}
+
+		img {
+			display: none;
+			float: left;
+			margin: 0 1em 0 0;
+			border: 1px solid #ccc;
+
+			@media (min-width: $site-max-width) {
+				display: block;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+			border: 0;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}		
+	}
+}
+
 /* Footer
 ==================================== */
 
