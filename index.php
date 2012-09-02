@@ -14,7 +14,18 @@
 	<?php include(DOCUMENT_ROOT . '/inc/header.inc.php'); ?>
 
 	<div id="main" role="main">
-		<section id="welkom" class="gridRow">
+		<section class="photoCarousel" class="gridRow">
+			<ul>
+				<li><a href="/content/alkmaar-kaasmarkt.jpg"><img src="/content/alkmaar-kaasmarkt.jpg" alt=""></a></li>
+				<li><a href="/content/castricum-sunset.jpg"><img src="/content/castricum-sunset.jpg" alt=""></a></li>
+				<li><a href="/content/duiven-night.jpg"><img src="/content/duiven-night.jpg" alt=""></a></li>
+				<li><a href="/content/madurodam-pano.jpg"><img src="/content/madurodam-pano.jpg" alt=""></a></li>
+				<li><a href="/content/ns-traintrack.jpg"><img src="/content/ns-traintrack.jpg" alt=""></a></li>
+				<li><a href="/content/streets-madurodam.jpg"><img src="/content/streets-madurodam.jpg" alt=""></a></li>		
+			</ul>
+		</section>
+
+		<section id="welkom" class="block gridRow">
 			<h1>Welkom op mijn website</h1>
 		
 			<div class="gridContainer_12">
@@ -37,7 +48,7 @@
 			</div>
 		</section>
 
-		<section id="fotografie" class="gridRow">
+		<section id="fotografie" class="block gridRow">
 			<h2>Fotografie</h2>
 
 			<p>
@@ -50,7 +61,7 @@
 			</p>
 		</section>
 
-		<section id="aikido" class="gridRow">
+		<section id="aikido" class="block gridRow">
 			<h2>Aikido</h2>
 
 			<p>
@@ -68,7 +79,7 @@
 			</p>			
 		</section>
 
-		<section id="webdesign" class="gridRow">
+		<section id="webdesign" class="block gridRow">
 			<h2>Webdesign</h2>
 
 			<p>

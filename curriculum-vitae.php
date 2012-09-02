@@ -14,7 +14,7 @@
 	<?php include(DOCUMENT_ROOT . '/inc/header.inc.php'); ?>
 
 	<div id="main" role="main">
-		<section id="cv" class="gridRow">
+		<section id="cv" class="block gridRow">
 			<h1>Curriculum Vitae</h1>
 
 			<p>

@@ -1,3 +1,13 @@
+// Photoswipe
+(function(window, PhotoSwipe){
+	document.addEventListener('DOMContentLoaded', function(){
+		var
+			options = {},
+			gallery2Instance = PhotoSwipe.attach( window.document.querySelectorAll('.photoCarousel a'), options );
+	
+	}, false);
+}(window, window.Code.PhotoSwipe));
+
 // CSS3 MediaQueries breakpoints
 var mqbreakpoint01 = 500;
 
