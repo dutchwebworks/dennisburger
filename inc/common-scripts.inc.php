@@ -3,9 +3,12 @@
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery.1.8.1.min.js"%3E%3C/script%3E'))</script>
-
  -->
+ 
 <script src="/js/scripts.js"></script>
+
+<!-- Load iOS orientation bug fix only for iOS devices -->
+<script>if(navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) Modernizr.load("/js/ios-orientationchange-fix.min.js");</script>
 
 <?php if($enable_ga) { ?>
 

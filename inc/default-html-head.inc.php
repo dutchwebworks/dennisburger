@@ -1,7 +1,6 @@
 <meta charset="UTF-8">
-
 <meta name="HandheldFriendly" content="True">
-<meta name="viewport" content="width=device-width; initial-scale=1">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 <link href="http://fonts.googleapis.com/css?family=Tinos:700italic" rel="stylesheet">
 
