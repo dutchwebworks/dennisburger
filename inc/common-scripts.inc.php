@@ -1,46 +1,11 @@
 <script src="/js/zepto.1.0.min.js"></script>
-<!-- <script src="/js/jquery.1.8.1.min.js"></script> -->
 
-<script>
-// CSS3 MediaQueries breakpoints
-var mqbreakpoint01 = 500;
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery.1.8.1.min.js"%3E%3C/script%3E'))</script>
 
-// Functions
-var Utils = {
-	q : function(q, res) {
-		if (document.querySelectorAll) {
-			res = document.querySelectorAll(q);
-		} else {
-			var d = document,
-			a = d.styleSheets[0] || d.createStyleSheet();
-			a.addRule(q,'f:b');
-			for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
-			l[b].currentStyle.f && c.push(l[b]);
-
-			a.removeRule(0);
-			res = c;
-		}
-		return res;
-	},
-}
-
-// Document load
-$(document).ready(function() {
-	// When the window resizes
-	$(window).resize(function() {
-		// Check CSS3 MediaQuery, and remove inline style
-		// this re-enables the menu when resizing the webbrowser manually
-		if(Modernizr.mq('(min-width: ' + mqbreakpoint01 + 'px)')) {
-			$('#navigation').removeAttr('style');
-		}
-	});
-
-	// show menu on smaller screens
-	$('#showMenu').click(function() {
-		$('#navigation').toggle();
-	});
-});	
-</script>
+ -->
+<script src="/js/scripts.js"></script>
 
 <?php if($enable_ga) { ?>
 
