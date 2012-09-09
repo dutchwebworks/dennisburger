@@ -63,6 +63,7 @@
 
 <script>
 enquire.register("(min-width:" + mqbreakpoint01 + "px)", {
+	match : function(){},
 	// When viewport is wider than breakpoint
 	// 'setup' is triggert once
     setup : function() {
