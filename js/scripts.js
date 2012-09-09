@@ -1,5 +1,5 @@
 // MediaQuery breakpoints
-var mqbreakpoint01 = 500;
+var mqbreakpoint02 = 500;
 
 Modernizr.load([
     {
@@ -10,14 +10,14 @@ Modernizr.load([
     	load: "/js/libs/enquire.1.1.0.min.js",
 
 	    complete: function () {
-			enquire.register("(max-width:" + mqbreakpoint01 + "px)", {
+			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
 				// Narrower than breakpoint
 			    match : function() {
-					$('body').removeClass('largeScreen').toggleClass('smallScreen');
+					//$('body').removeClass('largeScreen').toggleClass('smallScreen');
 			    },
 			    // Wider than breakpoint
 			    unmatch : function() {
-			    	$('body').removeClass('smallScreen').toggleClass('largeScreen');
+			    	//$('body').removeClass('smallScreen').toggleClass('largeScreen');
 			    	$('#navigation').removeAttr('style');
 			    },
 			    // Fire once when ready
@@ -26,7 +26,20 @@ Modernizr.load([
 						$('#navigation').toggle();
 					});
 			    }
-			}).listen();    	
+			}).listen();
+
+			enquire.register("(min-width:" + mqbreakpoint02 + "px)", {
+				match : function(){},
+				// When viewport is wider than breakpoint
+				// 'setup' is triggert once
+			    setup : function() {
+					$('#cvWebsites li').each(function(){
+						$(this).prepend('<img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '">');
+					});
+			    },
+			    // only trigger when breakpoints matches
+			    deferSetup : true
+			});			
 	    }
 	}
 ]);

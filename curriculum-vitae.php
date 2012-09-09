@@ -60,33 +60,5 @@
 </div>
 
 <?php include(DOCUMENT_ROOT . '/inc/common-scripts.inc.php'); ?>
-
-<script>
-Modernizr.load([
-    {
-        test: window.matchMedia,
-        nope: "/js/libs/matchMedia.js"
-    },
-    {
-    	load: "/js/libs/enquire.1.1.0.min.js",
-
-	    complete: function () {
-			enquire.register("(min-width:" + mqbreakpoint01 + "px)", {
-				match : function(){},
-				// When viewport is wider than breakpoint
-				// 'setup' is triggert once
-			    setup : function() {
-					$('#cvWebsites li').each(function(){
-						$(this).prepend('<img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '">');
-					});
-			    },
-			    // only trigger when breapoints matches
-			    deferSetup : true
-			});
-	    }
-	}
-]);
-</script>
-
 </body>
 </html>
