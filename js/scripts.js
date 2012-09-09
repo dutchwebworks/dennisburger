@@ -13,11 +13,10 @@ Modernizr.load([
 			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
 				// Narrower than breakpoint
 			    match : function() {
-					//$('body').removeClass('largeScreen').toggleClass('smallScreen');
+
 			    },
 			    // Wider than breakpoint
 			    unmatch : function() {
-			    	//$('body').removeClass('smallScreen').toggleClass('largeScreen');
 			    	$('#navigation').removeAttr('style');
 			    },
 			    // Fire once when ready
