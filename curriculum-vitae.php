@@ -62,22 +62,19 @@
 <?php include(DOCUMENT_ROOT . '/inc/common-scripts.inc.php'); ?>
 
 <script>
-// Document load
-$(document).ready(function() {
-	// Check for greater viewport width than CSS3 MediaQuery 1
-	if(Modernizr.mq('(min-width: ' + mqbreakpoint01 + 'px)')) {
-		// Lazy load images
-		var lazy = Utils.q('[data-src]');
-		for (var i = 0; i < lazy.length; i++) {
-			var source = lazy[i].getAttribute('data-src');
-			//create the image
-			var img = new Image();
-			img.src = source;
-			//insert it inside of the link
-			lazy[i].insertBefore(img, lazy[i].firstChild);
-		};
-	}	
-});	
+enquire.register("(min-width:" + mqbreakpoint01 + "px)", {
+	// When viewport is wider than breakpoint
+	// 'setup' is triggert once
+    setup : function() {
+		$('#cvWebsites li').each(function(){
+			var cvImage = $('<img>');
+			cvImage.attr({src: $(this).attr('data-src'), alt: $('h3', this).text()});
+			$(this).prepend(cvImage);
+		});
+    },
+    // only trigger when breapoints matches
+    deferSetup : true
+});
 </script>
 
 </body>
