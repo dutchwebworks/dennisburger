@@ -67,9 +67,7 @@ enquire.register("(min-width:" + mqbreakpoint01 + "px)", {
 	// 'setup' is triggert once
     setup : function() {
 		$('#cvWebsites li').each(function(){
-			var cvImage = $('<img>');
-			cvImage.attr({src: $(this).attr('data-src'), alt: $('h3', this).text()});
-			$(this).prepend(cvImage);
+			$(this).prepend('<img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '">');
 		});
     },
     // only trigger when breapoints matches
