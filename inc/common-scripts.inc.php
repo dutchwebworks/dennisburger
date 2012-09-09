@@ -4,8 +4,7 @@
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script>!window.jQuery && document.write(unescape('%3Cscript src="/js/libs/jquery.1.8.1.min.js"%3E%3C/script%3E'))</script>
 -->
- 
-<script src="/js/libs/enquire.1.1.0.min.js"></script>
+
 <script src="/js/scripts.js"></script>
 
 <!-- Load iOS orientation bug fix only for iOS devices -->
