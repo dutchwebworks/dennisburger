@@ -52,11 +52,15 @@
 	column-gap: $width;
 }
 
-@mixin font-face($font-custom, $font-url) {
+@mixin font-face($font-name, $font-url, $font-file) {
 	@font-face {
-	  font-family: '#{$font-custom}';
-	  src: url('#{$font-url}.eot?#') format('eot'),
-	       url('#{$font-url}.woff') format('woff'),
-	       url('#{$font-url}.ttf') format('truetype');
+	    font-family: '#{$font-name}';
+	    src: url('#{$font-url}#{$font-file}.eot');
+	    src: url('#{$font-url}#{$font-file}.eot?#iefix') format('embedded-opentype'),
+	         url('#{$font-url}#{$font-file}.woff') format('woff'),
+	         url('#{$font-url}#{$font-file}.ttf') format('truetype'),
+	         url('#{$font-url}#{$font-file}.svg##{$font-name}') format('svg');
+	    font-weight: normal;
+	    font-style: normal;	       
 	}
 }
