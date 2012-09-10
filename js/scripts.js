@@ -3,8 +3,9 @@ var mqbreakpoint02 = 500;
 
 Modernizr.load([
     {
-        test: window.matchMedia,
-        nope: "/js/libs/matchMedia.js"
+        test: window.matchMedia && Modernizr.mq('only all and (min-width: 1px)'),
+        // nope: "/js/libs/matchMedia.js"
+        nope: "/js/libs/respond.1.1.0.min.js"
     },
     {
     	load: "/js/libs/enquire.1.1.0.min.js",
