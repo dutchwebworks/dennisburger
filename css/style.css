@@ -624,3 +624,23 @@ a {
   font-size: 0.8em;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
 }
+
+/* flexbox test
+==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003253}}
+#main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003257}}
+#welkom {
+  order: 2;
+  flex: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003261}}
+#fotografie {
+  order: 1;
+  flex: 100%;
+}

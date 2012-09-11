@@ -64,3 +64,21 @@
 	    font-style: normal;	       
 	}
 }
+
+@mixin display-flexbox {
+	// display: -webkit-flexbox;
+	// display: -moz-flexbox;
+	// display: -ms-flexbox;
+	// display: -o-flexbox;    
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+@mixin flex-order($int) {
+	// -webkit-flex-order: $int;
+	// -moz-flex-order: $int;
+	// -ms-flex-order: $int;
+	// -o-flex-order: $int;	
+	order: $int;
+	flex: 100%;
+}
