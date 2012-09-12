@@ -250,14 +250,11 @@ a {
 /* flexbox test
 ==================================== */
 
-#main {
-	@include display-flexbox;
+@media (max-width: $mq-breakpoint-03) {
+	#main { @include display-flexbox; }
+	#welkom { @include flex-order(3); }
+	#fotografie { @include flex-order(1); }
+	#aikido { @include flex-order(8); }
+	#webdesign { @include flex-order(11); }
 }
 
-#welkom {
-	@include flex-order(2);
-}
-
-#fotografie {
-	@include flex-order(1);
-}

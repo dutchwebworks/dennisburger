@@ -66,19 +66,23 @@
 }
 
 @mixin display-flexbox {
-	// display: -webkit-flexbox;
-	// display: -moz-flexbox;
-	// display: -ms-flexbox;
-	// display: -o-flexbox;    
-	display: flex;
-	flex-wrap: wrap;	
+	display:box;
+	display:-moz-box;
+	display:-webkit-box;
+	display:-ms-box;
+	display:-o-box;
+
+	box-orient:vertical;
+	-moz-box-orient:vertical;
+	-webkit-box-orient:vertical;	
+	-ms-box-orient:vertical;	
+	-o-box-orient:vertical;	
 }
 
 @mixin flex-order($int) {
-	// -webkit-flex-order: $int;
-	// -moz-flex-order: $int;
-	// -ms-flex-order: $int;
-	// -o-flex-order: $int;	
-	order: $int;
-	flex: 100%;
+	box-ordinal-group: $int;
+	-moz-box-ordinal-group: $int;
+	-webkit-box-ordinal-group: $int;
+	-ms-box-ordinal-group: $int;
+	-o-box-ordinal-group: $int;
 }
