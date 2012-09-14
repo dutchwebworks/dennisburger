@@ -1,3 +1,4 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000032}}
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -5,28 +6,34 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000033}}
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000034}}
 h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li {
   margin-top: 0;
   padding-top: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000035}}
 h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000036}}
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000037}}
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000038}}
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -34,66 +41,80 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\000039}}
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000310}}
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: middle;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000311}}
 svg:not(:root) {
   overflow: hidden;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000312}}
 figure {
   margin: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000313}}
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000314}}
 textarea {
   overflow: auto;
   vertical-align: top;
   resize: vertical;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000316}}
 input:invalid, textarea:invalid {
   background-color: #f0dddd;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000317}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000318}}
 td {
   vertical-align: top;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000319}}
 td, th {
   text-align: left;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_reset\.scss}line{font-family:\0000320}}
 blockquote, blockquote p {
   font-style: italic;
 }
 
 /* 12 columns grid system
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\000034}}
 .gridContainer_12 {
   overflow: hidden;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\000038}}
 .gridContainer_12 > [class*="grid_"] {
   margin-bottom: 1em;
 }
 @media (min-width: 500px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\000038}}
   .gridContainer_12 > [class*="grid_"] {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -102,153 +123,190 @@ blockquote, blockquote p {
     margin-right: 2%;
     float: left;
   }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000317}}
   .gridContainer_12 > [class*="grid_"]:last-child {
     margin-right: 0;
   }
 }
 
 @media (min-width: 500px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000325}}
   .gridRow {
     margin-bottom: 1em;
   }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000328}}
   .gridRow:last-child {
     margin-bottom: 0;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000334}}
   .gridContainer_12 .grid_1 {
     width: 6.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000335}}
   .gridContainer_12 .grid_2 {
     width: 15%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000336}}
   .gridContainer_12 .grid_3 {
     width: 23.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000337}}
   .gridContainer_12 .grid_4 {
     width: 32%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000338}}
   .gridContainer_12 .grid_5 {
     width: 40.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000339}}
   .gridContainer_12 .grid_6 {
     width: 49%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000340}}
   .gridContainer_12 .grid_7 {
     width: 57.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000341}}
   .gridContainer_12 .grid_8 {
     width: 66%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000342}}
   .gridContainer_12 .grid_9 {
     width: 74.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000343}}
   .gridContainer_12 .grid_10 {
     width: 83%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000344}}
   .gridContainer_12 .grid_11 {
     width: 91.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000347}}
   .gridContainer_12 .grid_prefix_1 {
     margin-left: 8.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000348}}
   .gridContainer_12 .grid_prefix_2 {
     margin-left: 17%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000349}}
   .gridContainer_12 .grid_prefix_3 {
     margin-left: 25.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000350}}
   .gridContainer_12 .grid_prefix_4 {
     margin-left: 34%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000351}}
   .gridContainer_12 .grid_prefix_5 {
     margin-left: 42.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000352}}
   .gridContainer_12 .grid_prefix_6 {
     margin-left: 51%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000353}}
   .gridContainer_12 .grid_prefix_7 {
     margin-left: 59.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000354}}
   .gridContainer_12 .grid_prefix_8 {
     margin-left: 68%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000355}}
   .gridContainer_12 .grid_prefix_9 {
     margin-left: 76.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000356}}
   .gridContainer_12 .grid_prefix_10 {
     margin-left: 85%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000357}}
   .gridContainer_12 .grid_prefix_11 {
     margin-left: 93.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000360}}
   .gridContainer_12 .grid_suffix_1 {
     margin-right: 10.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000361}}
   .gridContainer_12 .grid_suffix_2 {
     margin-right: 19%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000362}}
   .gridContainer_12 .grid_suffix_3 {
     margin-right: 27.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000363}}
   .gridContainer_12 .grid_suffix_4 {
     margin-right: 36%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000364}}
   .gridContainer_12 .grid_suffix_5 {
     margin-right: 44.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000365}}
   .gridContainer_12 .grid_suffix_6 {
     margin-right: 53%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000366}}
   .gridContainer_12 .grid_suffix_7 {
     margin-right: 61.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000367}}
   .gridContainer_12 .grid_suffix_8 {
     margin-right: 70%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000368}}
   .gridContainer_12 .grid_suffix_9 {
     margin-right: 78.5%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000369}}
   .gridContainer_12 .grid_suffix_10 {
     margin-right: 87%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000370}}
   .gridContainer_12 .grid_suffix_11 {
     margin-right: 95.5%;
   }
 
   /* split text up in CSS columns
   ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000379}}
   .colSplit2,
   .colSplit3,
   .colSplit4,
@@ -259,30 +317,35 @@ blockquote, blockquote p {
     column-gap: 2%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000383}}
   .colSplit2 {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000384}}
   .colSplit3 {
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000385}}
   .colSplit4 {
     -moz-column-count: 4;
     -webkit-column-count: 4;
     column-count: 4;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000386}}
   .colSplit5 {
     -moz-column-count: 5;
     -webkit-column-count: 5;
     column-count: 5;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/_grid\.scss}line{font-family:\0000387}}
   .colSplit6 {
     -moz-column-count: 6;
     -webkit-column-count: 6;
@@ -291,6 +354,7 @@ blockquote, blockquote p {
 }
 /* Common
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\000036}}
 body {
   font-family: Georgia, serif;
   font-size: 100%;
@@ -302,6 +366,7 @@ body {
   background-color: #eee;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000317}}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Tinos", sans-serif;
   line-height: normal;
@@ -310,55 +375,67 @@ h1, h2, h3, h4, h5, h6 {
   color: #00aeef;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000325}}
 h2, h3, h4, h5, h6 {
   margin-top: 1em;
   margin-bottom: .5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000330}}
 h3, h4, h5, h6 {
   color: #ff5200;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000335}}
 h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child, p:last-child, li:last-child, dd:last-child {
   margin-bottom: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000340}}
 h1 {
   font-size: 2em;
   margin-top: 0.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000345}}
 h2 {
   font-size: 1.75em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000349}}
 h1 + h2 {
   margin-top: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000353}}
 h3 {
   font-size: 1.50em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000357}}
 h4, h5, h6 {
   font-size: 1.25em;
   color: #ff5200;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000362}}
 p, li, dt, dd {
   font-size: 1em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000366}}
 ul, ol {
   padding-left: 1.5em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000370}}
 a {
   color: #666666;
 }
 
 /* Wrapper
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000377}}
 #wrapper {
   background: #fff;
   width: auto;
@@ -366,6 +443,7 @@ a {
   overflow: hidden;
 }
 @media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000377}}
   #wrapper {
     width: 600px;
   }
@@ -373,6 +451,7 @@ a {
 
 /* Color gradients
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\0000393}}
 #header,
 #navigation,
 #footer {
@@ -387,21 +466,25 @@ a {
 
 /* Header
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003100}}
 #header {
   padding: 1em;
   position: relative;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003105}}
 #header h1 {
   margin: 0;
   display: block;
   float: left;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003110}}
 #header h1 a {
   color: #fff;
   text-decoration: none;
   text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003117}}
 #header #showMenu {
   display: block;
   float: right;
@@ -409,6 +492,7 @@ a {
   top: .4em;
 }
 @media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003125}}
   #header #showMenu {
     display: none;
   }
@@ -416,6 +500,7 @@ a {
 
 /* Nav
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003134}}
 #navigation {
   overflow: hidden;
   clear: both;
@@ -424,14 +509,17 @@ a {
   display: none;
 }
 @media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003134}}
   #navigation {
     display: block;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003146}}
 #navigation ul {
   margin: 0;
   padding: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003150}}
 #navigation ul li {
   display: block;
   width: 100%;
@@ -443,20 +531,24 @@ a {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003159}}
 #navigation ul li:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003159}}
   #navigation ul li:last-child {
     border-bottom: 0;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003167}}
 #navigation ul li a {
   color: #fff;
   font-size: 1.3em;
   text-decoration: none;
 }
 @media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003150}}
   #navigation ul li {
     float: left;
     width: 48%;
@@ -465,6 +557,7 @@ a {
 
 /* Main
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003184}}
 #main {
   margin-top: 0;
   margin-bottom: 2em;
@@ -474,12 +567,14 @@ a {
 
 /* CV list
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003194}}
 #cvWebsites {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003201}}
 #cvWebsites li {
   clear: both;
   overflow: hidden;
@@ -487,13 +582,16 @@ a {
   padding-bottom: 1em;
   border-bottom: 1px dotted #ccc;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003208}}
 #cvWebsites li h3 {
   margin: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003211}}
 #cvWebsites li h3 a {
   color: #ff5200;
   text-decoration: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003217}}
 #cvWebsites li img {
   display: none;
   float: left;
@@ -501,10 +599,12 @@ a {
   border: 1px solid #ccc;
 }
 @media (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003217}}
   #cvWebsites li img {
     display: block;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003228}}
 #cvWebsites li:last-child {
   margin-bottom: 0;
   border: 0;
@@ -514,9 +614,11 @@ a {
 
 /* Footer
 ==================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003240}}
 #footer {
   padding: 1em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003243}}
 #footer p {
   color: #fff;
   font-size: 0.8em;
@@ -526,48 +628,53 @@ a {
 /* flexbox test
 ==================================== */
 @media (max-width: 781px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003254}}
   #main {
-    display: box;
     display: -moz-box;
     display: -webkit-box;
     display: -ms-box;
     display: -o-box;
-    box-orient: vertical;
+    display: box;
     -moz-box-orient: vertical;
     -webkit-box-orient: vertical;
     -ms-box-orient: vertical;
     -o-box-orient: vertical;
+    box-orient: vertical;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003259}}
   #welkom {
-    box-ordinal-group: 3;
     -moz-box-ordinal-group: 3;
     -webkit-box-ordinal-group: 3;
     -ms-box-ordinal-group: 3;
     -o-box-ordinal-group: 3;
+    box-ordinal-group: 3;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003260}}
   #fotografie {
-    box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -webkit-box-ordinal-group: 1;
     -ms-box-ordinal-group: 1;
     -o-box-ordinal-group: 1;
+    box-ordinal-group: 1;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003261}}
   #aikido {
-    box-ordinal-group: 8;
     -moz-box-ordinal-group: 8;
     -webkit-box-ordinal-group: 8;
     -ms-box-ordinal-group: 8;
     -o-box-ordinal-group: 8;
+    box-ordinal-group: 8;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/WebServer\/vhosts\/dennisburger\.local\.lucius\.nl\/httpdocs\/sass\/style\.scss}line{font-family:\00003262}}
   #webdesign {
-    box-ordinal-group: 11;
     -moz-box-ordinal-group: 11;
     -webkit-box-ordinal-group: 11;
     -ms-box-ordinal-group: 11;
     -o-box-ordinal-group: 11;
+    box-ordinal-group: 11;
   }
 }

@@ -251,10 +251,13 @@ a {
 ==================================== */
 
 @media (max-width: $mq-breakpoint-03) {
-	#main { @include display-flexbox; }
-	#welkom { @include flex-order(3); }
-	#fotografie { @include flex-order(1); }
-	#aikido { @include flex-order(8); }
-	#webdesign { @include flex-order(11); }
-}
+	#main { 
+		@include display-box;
+		@include box-orient;
+	}
 
+	#welkom { @include box-order-group(3); }
+	#fotografie { @include box-order-group(1); }
+	#aikido { @include box-order-group(8); }
+	#webdesign { @include box-order-group(11); }
+}
