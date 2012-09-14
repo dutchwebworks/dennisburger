@@ -9,7 +9,15 @@
 	-moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
 	-webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
 	border-radius: $top-left $top-right $bottom-right $bottom-left;
+	
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+
+	// Less than Win/IE9 fix
+	.lte9 & {
+		zoom: 1;
+		border-radius: $radius;
+		behavior: url(/themes/base/htc/PIE.htc);
+	}
 }
 
 @mixin box-shadow($x: 0, $y: 5px, $spread: 5px, $color: rgba(0,0,0,0.3)) {
