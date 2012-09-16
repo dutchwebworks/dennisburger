@@ -8,12 +8,14 @@ Modernizr.load([
         nope: "/js/libs/respond.1.1.0.min.js"
     },
     {
-    	load: "/js/libs/enquire.1.3.0.min.js",
+    	load: "/js/libs/enquire.1.1.0.min.js",
 
 	    complete: function () {
 			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
 				// Narrower than breakpoint
-			    match : function() {},
+			    match : function() {
+
+			    },
 			    // Wider than breakpoint
 			    unmatch : function() {
 			    	$('#navigation').removeAttr('style');
@@ -36,7 +38,9 @@ Modernizr.load([
 							$(this).prepend('<div class="thumb"><img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '"></div>');
 						}
 					});
-			    }
+			    },
+			    // only trigger when breakpoints matches
+			    deferSetup : true
 			});			
 	    }
 	}
