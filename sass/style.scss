@@ -246,18 +246,3 @@ a {
 		text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
 	}
 }
-
-/* flexbox test
-==================================== */
-
-@media (max-width: $mq-breakpoint-03) {
-	#main { 
-		@include display-box;
-		@include box-orient;
-	}
-
-	#welkom { @include box-order-group(3); }
-	#fotografie { @include box-order-group(1); }
-	#aikido { @include box-order-group(8); }
-	#webdesign { @include box-order-group(11); }
-}

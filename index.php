@@ -1,5 +1,8 @@
-<?php include('inc/config.inc.php'); ?>
-<?php include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php'); ?>
+<?php 
+include('inc/config.inc.php');
+include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php'); 
+?>
+
 <head>
 <?php include(DOCUMENT_ROOT . '/inc/default-html-head.inc.php'); ?>
 

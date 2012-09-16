@@ -1,0 +1,12 @@
+<ul id="cvWebsites">
+<!-- begin ITEMS -->
+<li data-src="{url_img}">
+	<h3><a href="http://destulp.nl">&rsaquo; {title}</a></h3>
+
+	<p><strong>{bedrijf}</strong> {datum}</p>
+
+	{omschrijving}
+</li>
+<!-- end ITEMS -->
+</ul>
+
