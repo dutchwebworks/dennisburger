@@ -24,21 +24,10 @@ class mod_sites{
 			foreach($result as $db_row){
 				$block_row = $clean_block;		// clean html	
 				
-				$block_row = str_replace("{title}", $db_row['title'], $block_row);
-				
-				// thumbnail plus link
-				$thumbnail = false;
-				if($db_row['thumb'] != null) {
-					$thumbnail = "<img src=\"".$settings['thumbnail_dir'].$db_row['thumb']."\" class=\"thumb\" alt=\"".$db_row['title']."\" />";
-					if ($db_row['url'] != null) {
-						$thumbnail = "<a href=\"".$db_row['url']."\">".$thumbnail."</a>"; 
-					}
-				}
-				$block_row = str_replace("{thumb}", $thumbnail ? "<p  class=\"thumb\">".$thumbnail."</p>" : "&nbsp;", $block_row);
-				
+				$block_row = str_replace("{title}", $db_row['title'], $block_row);						
 				$block_row = str_replace("{url}", $db_row['url'], $block_row);
 				$block_row = str_replace("{url_img}", $db_row['thumb'] ? "data-src=\"".$settings['thumbnail_dir'].$db_row['thumb']."\"" : false, $block_row);
-				$block_row = str_replace("{omschrijving}", $db_row['omschrijving'], $block_row);	
+				$block_row = str_replace("{omschrijving}", $db_row['omschrijving'], $block_row);
 				$block_row = str_replace("{werkzaamheden}", $this->makeUnorderdList($db_row['werkzaamheden']), $block_row);
 				$block_row = str_replace("{bedrijf}", $db_row['bedrijf'], $block_row);
 				$block_row = str_replace("{datum}", $db_row['datum'], $block_row);
