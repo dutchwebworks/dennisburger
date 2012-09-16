@@ -33,8 +33,10 @@ Modernizr.load([
 				// When viewport is wider than breakpoint
 				// 'setup' is triggert once
 			    setup : function() {
-					$('#cvWebsites li').each(function(){
-						$(this).prepend('<img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '">');
+					$('#cvWebsites .site').each(function(){
+						if($(this).attr('data-src')) {
+							$(this).prepend('<div class="thumb"><img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '"></div>');
+						}
 					});
 			    },
 			    // only trigger when breakpoints matches

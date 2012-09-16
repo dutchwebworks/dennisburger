@@ -36,8 +36,8 @@ class mod_sites{
 				}
 				$block_row = str_replace("{thumb}", $thumbnail ? "<p  class=\"thumb\">".$thumbnail."</p>" : "&nbsp;", $block_row);
 				
-				$block_row = str_replace("{url}", $db_row['url'] ? "<a href=\"".$db_row['url']."\" target=\"_blank\">".$db_row['url']."</a>" : false, $block_row);
-				$block_row = str_replace("{url_img}", $settings['thumbnail_dir'].$db_row['thumb'], $block_row);
+				$block_row = str_replace("{url}", $db_row['url'], $block_row);
+				$block_row = str_replace("{url_img}", $db_row['thumb'] ? "data-src=\"".$settings['thumbnail_dir'].$db_row['thumb']."\"" : false, $block_row);
 				$block_row = str_replace("{omschrijving}", $db_row['omschrijving'], $block_row);	
 				$block_row = str_replace("{werkzaamheden}", $this->makeUnorderdList($db_row['werkzaamheden']), $block_row);
 				$block_row = str_replace("{bedrijf}", $db_row['bedrijf'], $block_row);
