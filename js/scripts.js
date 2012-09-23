@@ -1,7 +1,12 @@
 // Photoswipe
-$(document).ready(function(){
-	PhotoSwipe.attach( window.document.querySelectorAll('.photoCarousel a'), options )
-});
+(function(window, PhotoSwipe){
+	document.addEventListener('DOMContentLoaded', function(){
+		var
+			options = {},
+			gallery2Instance = PhotoSwipe.attach( window.document.querySelectorAll('.photoCarousel a'), options );
+	
+	}, false);
+}(window, window.Code.PhotoSwipe));
 
 // MediaQuery breakpoints
 var mqbreakpoint02 = 500;
@@ -50,4 +55,3 @@ Modernizr.load([
 	    }
 	}
 ]);
-
