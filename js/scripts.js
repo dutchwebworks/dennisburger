@@ -1,59 +1,53 @@
 // Photoswipe
-(function(window, PhotoSwipe){
-	document.addEventListener('DOMContentLoaded', function(){
-		var
-			options = {},
-			gallery2Instance = PhotoSwipe.attach( window.document.querySelectorAll('.photoCarousel a'), options );
-	
-	}, false);
-}(window, window.Code.PhotoSwipe));
+$(document).ready(function(){
+	PhotoSwipe.attach( window.document.querySelectorAll('.photoCarousel a'), options )
+});
 
-// CSS3 MediaQueries breakpoints
-var mqbreakpoint01 = 500;
+// MediaQuery breakpoints
+var mqbreakpoint02 = 500;
 
-// Functions
-var Utils = {
-	q : function(q, res) {
-		if (document.querySelectorAll) {
-			res = document.querySelectorAll(q);
-		} else {
-			var d = document,
-			a = d.styleSheets[0] || d.createStyleSheet();
-			a.addRule(q,'f:b');
-			for(var l=d.all,b=0,c=[],f=l.length;b<f;b++)
-			l[b].currentStyle.f && c.push(l[b]);
+Modernizr.load([
+    {
+        test: window.matchMedia && Modernizr.mq('only all and (min-width: 1px)'),
+        // nope: "/js/libs/matchMedia.js"
+        nope: "/js/libs/respond.1.1.0.min.js"
+    },
+    {
+    	load: "/js/libs/enquire.1.1.0.min.js",
 
-			a.removeRule(0);
-			res = c;
-		}
-		return res;
-	},
-}
+	    complete: function () {
+			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
+				// Narrower than breakpoint
+			    match : function() {
 
-// Document load
-$(document).ready(function() {
-	// When the window resizes
-	$(window).resize(function() {
-		// Check CSS3 MediaQuery, and remove inline style
-		// this re-enables the menu when resizing the webbrowser manually
-		if(Modernizr.mq('(min-width: ' + mqbreakpoint01 + 'px)')) {
-			$('#navigation').removeAttr('style');
-		}
-	});
+			    },
+			    // Wider than breakpoint
+			    unmatch : function() {
+			    	$('#navigation').removeAttr('style');
+			    },
+			    // Fire once when ready
+			    setup : function() {
+					$('#showMenu').click(function() {
+						$('#navigation').toggle();
+					});
+			    }
+			}).listen();
 
-	// show menu on smaller screens
-	$('#showMenu').click(function() {
-		$('#navigation').toggle();
-	});
+			enquire.register("(min-width:" + mqbreakpoint02 + "px)", {
+				match : function(){},
+				// When viewport is wider than breakpoint
+				// 'setup' is triggert once
+			    setup : function() {
+					$('#cvWebsites .site').each(function(){
+						if($(this).attr('data-src')) {
+							$(this).prepend('<div class="thumb"><img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '"></div>');
+						}
+					});
+			    },
+			    // only trigger when breakpoints matches
+			    deferSetup : true
+			});			
+	    }
+	}
+]);
 
-	/*
-	$("#showMenu").toggle(
-		function () {
-			$('#navigation').slideDown();
-		},
-		function () {
-			$('#navigation').slideUp('fast');
-		}
-	);
-	*/	
-});	

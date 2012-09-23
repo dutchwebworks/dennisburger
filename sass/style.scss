@@ -4,8 +4,9 @@
 ==================================== */
 
 body {
-	font-family: $font-default-body;
+	font-family: $font-custom-body;
 	font-size: $font-default-size;
+	font-weight:400;
 	line-height: $font-default-line-height;
 	color: $color-body-text;
 	margin: 0;
@@ -14,7 +15,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: $font-default-headings;	
+	font-family: $font-custom-headings;
 	line-height: normal;
 	font-weight: 700;
 	font-style: italic;
@@ -222,30 +223,56 @@ a {
 	overflow: hidden;
 
 
-	li {
+	.site {
 		clear:both;
 		overflow:hidden;
 		margin-bottom: 1em;
 		padding-bottom: 1em;
 		border-bottom: 1px dotted #ccc;
 
-		h3 {
-			margin: 0;
-
-			a {
-				color: $color-secondary;
-				text-decoration:none;
+		.thumb {
+			@media (min-width: $site-max-width) {
+				width: 250px;
+				float:left;
 			}
+
+			img {
+				display: none;
+				float: left;
+				margin: 0 1em 0 0;
+				border: 1px solid #ccc;
+
+				@media (min-width: $site-max-width) {
+					display: block;
+				}
+			}		
 		}
 
-		img {
-			display: none;
-			float: left;
-			margin: 0 1em 0 0;
-			border: 1px solid #ccc;
-
+		.info {
 			@media (min-width: $site-max-width) {
-				display: block;
+				width: 290px;
+				float:right;
+				overflow:hidden;
+			}
+
+			h3 {
+				margin: 0;
+
+				a {
+					color: $color-secondary;
+					text-decoration:none;
+				}
+			}
+
+			ul {
+				overflow:hidden;
+
+				li {
+					margin: 0;
+					padding: 0;
+					line-height:1.2em;
+					font-size:1em;
+				}
 			}
 		}
 

@@ -1,8 +1,11 @@
 // SASS configuration
 
 // Fonts
-$font-default-headings: 'Tinos', serif;
-$font-default-body: Georgia, serif;
+$font-default-headings: Georgia, serif;
+$font-default-body: Arial, sans-serif;
+
+$font-custom-headings: 'Tinos', sans-serif;
+$font-custom-body: Georgia, serif;
 
 $font-default-size: 100%;
 $font-default-line-height: 1.5em;
@@ -23,6 +26,7 @@ $mq-breakpoint-03: 781px;
 $mq-breakpoint-04: 1025px;
 
 // Vars
+$font-dir: '../fonts/';
 $site-max-width: 600px;
 
 // Grid units
