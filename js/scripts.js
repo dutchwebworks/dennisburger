@@ -1,12 +1,11 @@
-// Photoswipe
-(function(window, PhotoSwipe){
-	document.addEventListener('DOMContentLoaded', function(){
-		var
-			options = {},
-			gallery2Instance = PhotoSwipe.attach( window.document.querySelectorAll('.photoCarousel a'), options );
-	
-	}, false);
-}(window, window.Code.PhotoSwipe));
+// jQuery loading que
+$(document).ready(function(){
+	// Photoswipe
+	$(".photoCarousel a").photoSwipe({ 
+		enableMouseWheel: false, 
+		enableKeyboard: true
+	});
+});
 
 // MediaQuery breakpoints
 var mqbreakpoint02 = 500;

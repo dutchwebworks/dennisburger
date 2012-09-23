@@ -9,9 +9,6 @@
 
 <script src="/js/scripts.js"></script>
 
-<!-- Load iOS orientation bug fix only for iOS devices -->
-<script>if(navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) Modernizr.load("/js/libs/ios-orientationchange-fix.min.js");</script>
-
 <?php if($enable_ga) { ?>
 
 <!-- Google Analytics -->
