@@ -8,7 +8,7 @@
 define('DB_HOST', '127.0.0.1');
 define('DB_USERNAME', 'dennis');
 define('DB_PASSWORD', 'bgbcjhd7');
-define('DB_NAME', 'atlantis');
+define('DB_NAME', 'dennisburger');
 
 // Database table's
 $db_table['sites'] = 					"cv_sites";
