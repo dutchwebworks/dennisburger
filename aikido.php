@@ -9,7 +9,7 @@ include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php');
 <link rel="canonical" href="/">
 <meta name="description" content="">
 
-<title>Dennis Burger :: Website</title>
+<title>Dennis Burger :: Aikido</title>
 
 </head>
 <body>
@@ -28,27 +28,22 @@ include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php');
 			</ul>
 		</section>
 
-		<section id="welkom" class="block gridRow">
-			<h1>Welkom op mijn website</h1>
-		
-			<div class="gridContainer_12">
-				<div class="grid_8">
-					<p>Introductie. Consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
+		<section id="aikido" class="block gridRow">
+			<h2>Aikido</h2>
 
-				<div class="grid_4">
-					<p>Introductie. Consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					</p>
-				</div>
-			</div>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+			</p>
+
+			<h3>Subheading</h3>
+
+			<p>
+				Consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>			
 		</section>
 	</div>
 
