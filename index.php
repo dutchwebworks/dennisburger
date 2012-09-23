@@ -109,5 +109,11 @@ include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php');
 </div>
 
 <?php include(DOCUMENT_ROOT . '/inc/common-scripts.inc.php'); ?>
+
+<script>
+// Photoswipe
+$(document).ready(function(){ $(".photoCarousel a").photoSwipe(); });
+</script>
+
 </body>
 </html>
