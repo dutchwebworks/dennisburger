@@ -28,7 +28,11 @@
 
 @mixin opacity($opacity: 1) {
 	opacity: $opacity;
-	filter: alpha(opacity=#{$opacity*100});
+
+	// Less than Win/IE9 fix
+	.lte9 & {
+		filter: alpha(opacity=#{$opacity*100});
+	}
 }
 
 @mixin bg-linear-gradient($color1: #ccc, $color2: #000) {
