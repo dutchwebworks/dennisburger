@@ -13,7 +13,7 @@
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 
 	// Less than Win/IE9 fix
-	.lte9 & {
+	.lte8 & {
 		zoom: 1;
 		border-radius: $radius;
 		behavior: url(/themes/base/htc/PIE.htc);
@@ -30,7 +30,7 @@
 	opacity: $opacity;
 
 	// Less than Win/IE9 fix
-	.lte9 & {
+	.lte8 & {
 		filter: alpha(opacity=#{$opacity*100});
 	}
 }
