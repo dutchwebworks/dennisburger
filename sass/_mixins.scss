@@ -14,11 +14,11 @@
 	
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 
-	// Less than Win/IE9 fix
+	// Using Modernizr for Win/IE 8 and lower
 	.lte8 & {
 		zoom: 1;
-		border-radius: $radius;
-		behavior: url(/themes/base/htc/PIE.htc);
+		border-radius: $top-left $top-right $bottom-right $bottom-left;
+		behavior: url(/htc/PIE.htc);
 	}
 }
 
@@ -31,10 +31,10 @@
 @mixin opacity($opacity: 1) {
 	opacity: $opacity;
 
-	// Less than Win/IE9 fix
+	// Using Modernizr for Win/IE 8 and lower
 	.lte8 & {
 		filter: alpha(opacity=#{$opacity*100});
-	}
+	}	
 }
 
 @mixin bg-linear-gradient($color1: #ccc, $color2: #000) {
@@ -52,6 +52,12 @@
 	-moz-box-sizing: $method;
 	-webkit-box-sizing: $method;
 	box-sizing: $method;
+
+	// Using Modernizr for Win/IE7 and lower
+	.lte7 & {
+		box-sizing: $method;
+		behavior: url(/htc/boxsizing.htc);
+	}
 }
 
 @mixin column-count($columns) {
