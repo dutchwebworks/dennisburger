@@ -8,6 +8,8 @@
 @mixin border-radius($top-left: 0px, $top-right: 0px, $bottom-left: 0px, $bottom-right: 0px) {
 	-moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
 	-webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    -o-border-radius: $top-left $top-right $bottom-right $bottom-left;
+    -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
 	border-radius: $top-left $top-right $bottom-right $bottom-left;
 	
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
@@ -36,7 +38,7 @@
 }
 
 @mixin bg-linear-gradient($color1: #ccc, $color2: #000) {
-	background-color: $color1;
+	background-color: $color2;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$color1}, endColorstr=#{$color2})";
 	background-image: -webkit-gradient(linear, left top, left bottom, from($color1), to($color2));
 	background-image: -webkit-linear-gradient(top, $color1, $color2);
