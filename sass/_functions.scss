@@ -1,14 +1,20 @@
 // SASS functions
 
+// ---------------------------------------------
 // Responsive design formula (by Ethan Marcotte)
 // The 'container' is the parent and 'target' (the child)
 // is calculated from pixels to percentages
 // http://www.thesassway.com/advanced/pure-sass-functions
+// ---------------------------------------------
+
 @function calc-percent($target, $container) {
 	@return ($target / $container) * 100%;
 }
 
+// ---------------------------------------------
 // calc
+// ---------------------------------------------
+
 @function calc-grid-block-width($cols: 0, $gutters: 0){
 	@return ($grid-column-width * $cols) + ($grid-gutter-width * $gutters);
 }
