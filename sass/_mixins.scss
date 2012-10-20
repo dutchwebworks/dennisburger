@@ -184,6 +184,16 @@ $vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 }
 
 // ---------------------------------------------
+// Setting :hover :active :focus
+// ---------------------------------------------
+
+@mixin hoverActiveFocus($property, $value) {
+	&:hover, &:active, &:focus {
+		#{$property}: $value;
+	}
+}
+
+// ---------------------------------------------
 // Flexbox
 // ---------------------------------------------
 
