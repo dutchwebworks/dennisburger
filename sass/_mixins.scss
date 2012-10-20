@@ -151,6 +151,39 @@
 }
 
 // ---------------------------------------------
+// Vendor prefixes
+// ---------------------------------------------
+
+$vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
+@mixin prefix($property, $value) { 
+	@each $prefix in $prefixes {
+		#{$vendor-prefixes}#{$property}: #{$value};
+	}
+}
+
+// ---------------------------------------------
+// Clearing method without using overflow:hidden;
+// ---------------------------------------------
+
+@mixin clear() {
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		overflow: hidden;
+    }
+
+	&:after {
+		clear: both;
+	}
+
+	// Win/IE 8 and lower
+	.lte8 {
+		zoom: 1;
+	}
+}
+
+// ---------------------------------------------
 // Flexbox
 // ---------------------------------------------
 
