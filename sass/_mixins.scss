@@ -178,7 +178,7 @@ $vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 	}
 
 	// Win/IE 8 and lower
-	.lte8 {
+	.lte8 & {
 		zoom: 1;
 	}
 }
