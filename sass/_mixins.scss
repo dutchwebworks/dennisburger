@@ -34,10 +34,10 @@
 // Box-shadow
 // ---------------------------------------------
 
-@mixin box-shadow($x: 0, $y: 5px, $spread: 5px, $color: rgba(0,0,0,0.3)) {
-	-moz-box-shadow: $x $y $spread $color;
-	-webkit-box-shadow: $x $y $spread $color;
-	box-shadow: $x $y $spread $color;
+@mixin box-shadow($x: 0, $y: 5px, $spread: 5px, $color: rgba(0,0,0,0.3), $inset:"") {
+	-moz-box-shadow: #{$inset} $x $y $spread $color;
+	-webkit-box-shadow: #{$inset} $x $y $spread $color;
+	box-shadow: #{$inset} $x $y $spread $color;
 }
 
 // ---------------------------------------------
@@ -65,14 +65,10 @@
 	background-image:      -o-linear-gradient(top, $color1, $color2);
 	background-image:         linear-gradient(to bottom, $color1, $color2);
 
-	.ie9 & {
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$color1}, endColorstr=#{$color2})";
-	}
-
-	.lte8 & {
+	.lte9 & {
 		zoom: 1;
 		-pie-background: linear-gradient($color1, $color2);
-		behavior: url(/htc/PIE.htc);
+		behavior: url(/themes/base/htc/PIE.htc);
 	}
 }
 
