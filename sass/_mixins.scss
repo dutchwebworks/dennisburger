@@ -152,8 +152,8 @@
 
 $vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 @mixin prefix($property, $value) { 
-	@each $prefix in $prefixes {
-		#{$vendor-prefixes}#{$property}: #{$value};
+	@each $prefix in $vendor-prefixes {
+		#{$prefix}#{$property}: #{$value};
 	}
 }
 
