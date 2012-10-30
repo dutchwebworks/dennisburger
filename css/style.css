@@ -409,7 +409,7 @@ a {
 #footer {
   zoom: 1;
   -pie-background: linear-gradient(#00aeef, #006489);
-  behavior: url(/themes/base/htc/PIE.htc);
+  behavior: url(/htc/PIE.htc);
 }
 
 /* Header
