@@ -216,3 +216,34 @@ $vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 	-o-box-ordinal-group: $int;
 	box-ordinal-group: $int;
 }
+
+// ---------------------------------------------
+// Background adaptive images (Modernizr)
+// ---------------------------------------------
+
+@mixin background-adaptive($file) {
+	.no-svg & {
+		background-image: url($file + '.png');
+	}
+	.svg & {
+      	background-image: url($file + '.svg');
+  	}
+
+  	// Target higher density screens
+  	// By using a ratio of 1.5 instead of 2, 
+  	// you can target other non-Apple devices with the same query.
+  	@media (-webkit-min-device-pixel-ratio: 1.5), 
+  		   (-moz-min-device-pixel-ratio: 1.5), 
+  		   (-o-min-device-pixel-ratio: 3/2),
+  		   (min-device-pixel-ratio: 1.5) {
+
+	  	.no-svg & {
+			background-image: url($file + '@2x.png');
+			background-size: 100% 100%;
+		}
+
+		.svg & {
+	      	background-image: url($file + '.svg');
+	  	}
+  	}
+}
