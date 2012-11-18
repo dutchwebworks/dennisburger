@@ -6,9 +6,8 @@
 
 <script src="/js/libs/klass.min.js"></script>
 <script src="/js/libs/code.photoswipe-3.0.5.min.js"></script>
-<script src="/js/scripts.js"></script>
 
-<!-- <script src="/js/scripts.concatenated.min.js"></script> -->
+<script src="/js/scripts.js"></script>
 
 <!-- Basic CSS3 MediaQueries for less than Win/IE9 -->
 <!--[if lt IE 9]>
