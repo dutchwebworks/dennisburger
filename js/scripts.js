@@ -8,7 +8,7 @@ Modernizr.load([
         nope: "/js/libs/respond.1.1.0.min.js"
     },
     {
-    	load: "/js/libs/enquire.1.1.0.min.js",
+    	load: "/js/libs/enquire.min.js",
 
 	    complete: function () {
 			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
