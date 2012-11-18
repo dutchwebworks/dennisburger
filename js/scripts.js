@@ -1,5 +1,5 @@
 // MediaQuery breakpoints
-var mqbreakpoint02 = 500;
+var mqbreakpoint02 = 600; // SASS var $site-max-width
 var thumbsLoaded = false; // mobile first
 
 Modernizr.load([
@@ -23,7 +23,7 @@ Modernizr.load([
 						$('#navigation').toggle();
 					});
 			    }
-			}).register("(min-width:" + mqbreakpoint02 + "px)", {
+			}, true).register("(min-width:" + mqbreakpoint02 + "px)", {
 			    match : function() {
 			    	if (!thumbsLoaded) {
 			    		// Grab the 'data-src' attribute and add it as an image
@@ -41,7 +41,7 @@ Modernizr.load([
 			    		enableKeyboard: true
 			    	});			    	
 			    }
-			}).listen();		
+			}, true).listen();		
 	    }
 	}
 ]);
