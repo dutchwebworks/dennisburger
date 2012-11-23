@@ -224,9 +224,11 @@ $vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 @mixin background-adaptive($file) {
 	.no-svg & {
 		background-image: url($file + '.png');
+		background-repeat: no-repeat;
 	}
 	.svg & {
       	background-image: url($file + '.svg');
+      	background-repeat: no-repeat;
   	}
 
   	// Target higher density screens
@@ -239,11 +241,13 @@ $vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 
 	  	.no-svg & {
 			background-image: url($file + '@2x.png');
+			background-repeat: no-repeat;
 			background-size: 100% 100%;
 		}
 
 		.svg & {
 	      	background-image: url($file + '.svg');
+	      	background-repeat: no-repeat;
 	  	}
   	}
 }
