@@ -45,6 +45,9 @@ $mq-breakpoint-04: 1025px;
 $font-dir: '../fonts/';
 $site-max-width: 600px;
 
+// Used in _mixins.scss for proprietary web browser prefixes
+$vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
+
 // ---------------------------------------------
 // Grid units
 // ---------------------------------------------

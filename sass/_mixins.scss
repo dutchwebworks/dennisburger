@@ -148,9 +148,9 @@
 
 // ---------------------------------------------
 // Vendor prefixes
+// var $vendor-prefixes is set in _config.scss
 // ---------------------------------------------
 
-$vendor-prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 @mixin prefix($property, $value) { 
 	@each $prefix in $vendor-prefixes {
 		#{$prefix}#{$property}: #{$value};
