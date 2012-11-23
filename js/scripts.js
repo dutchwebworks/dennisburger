@@ -41,7 +41,21 @@ Modernizr.load([
 			    		enableKeyboard: true
 			    	});			    	
 			    }
-			}, true).listen();		
+			}, true).listen();
+
+			// modernizrPNGfallback();	// Swap inline image .svg with HTML5 data-src attribute .png fallback in unsupported browsers
 	    }
 	}
 ]);
+
+/*	p80jq_modernizrPNGfallback, Swap inline .svg image with HTML5 data-png-fallback attribute .png fallback in unsupported browsers
+============================================================= */
+
+function modernizrPNGfallback(){
+	if(!Modernizr.svg) {
+	    var images = $('img[data-png-fallback]');
+	    images.each(function(i) {
+	      $(this).attr('src', $(this).data('png-fallback'));
+	    });
+	}
+}
