@@ -1,6 +1,19 @@
+/* jQuery que loader
+================================================ */
+
+$(document).ready(function(){
+	// modernizrPNGfallback();	// Swap inline image .svg with HTML5 data-src attribute .png fallback in unsupported browsers
+});
+
+/* Vars
+================================================ */
+
 // MediaQuery breakpoints
 var mqbreakpoint02 = 600; // SASS var $site-max-width
 var thumbsLoaded = false; // mobile first
+
+/* Modernizr load enquire.js
+================================================ */
 
 Modernizr.load([
     {
@@ -42,11 +55,11 @@ Modernizr.load([
 			    	});			    	
 			    }
 			}, true).listen();
-
-			// modernizrPNGfallback();	// Swap inline image .svg with HTML5 data-src attribute .png fallback in unsupported browsers
 	    }
 	}
 ]);
+
+// FUNCTIONS
 
 /*	p80jq_modernizrPNGfallback, Swap inline .svg image with HTML5 data-png-fallback attribute .png fallback in unsupported browsers
 ============================================================= */
