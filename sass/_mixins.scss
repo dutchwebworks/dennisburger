@@ -13,20 +13,15 @@
 // Border-radius
 // ---------------------------------------------
 
-@mixin border-radius($top-left: 0px, $top-right: 0px, $bottom-right: 0px, $bottom-left: 0px) {
-	-moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
-	-webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
-    -o-border-radius: $top-left $top-right $bottom-right $bottom-left;
-    -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
-	border-radius: $top-left $top-right $bottom-right $bottom-left;
-	
-	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+@mixin border-radius($radius: 5px) {
+	@include prefix-selector(border-radius, $radius);
+	@include prefix-selector(background-clip, padding);
 
 	// Using Modernizr for Win/IE 8 and lower
 	.lte8 & {
 		zoom: 1;
-		border-radius: $top-left $top-right $bottom-right $bottom-left;
-		behavior: url(/htc/PIE.htc);
+		border-radius: $radius;
+		behavior: url(/themes/base/htc/PIE.htc);
 	}
 }
 
@@ -34,10 +29,8 @@
 // Box-shadow
 // ---------------------------------------------
 
-@mixin box-shadow($x: 0, $y: 5px, $spread: 5px, $color: rgba(0,0,0,0.3), $inset:"") {
-	-moz-box-shadow: #{$inset} $x $y $spread $color;
-	-webkit-box-shadow: #{$inset} $x $y $spread $color;
-	box-shadow: #{$inset} $x $y $spread $color;
+@mixin box-shadow($shadow: 0 5px 5px rgba(0,0,0,0.3)) {
+	@include prefix-selector(box-shadow, $shadow);
 }
 
 // ---------------------------------------------
@@ -68,7 +61,7 @@
 	.lte9 & {
 		zoom: 1;
 		-pie-background: linear-gradient($color1, $color2);
-		behavior: url(/htc/PIE.htc);
+		behavior: url(/themes/base/htc/PIE.htc);
 	}
 }
 
@@ -78,14 +71,12 @@
 
 // use: 'content-box' or 'border-box'
 @mixin box-sizing($method: border-box) {
-	-moz-box-sizing: $method;
-	-webkit-box-sizing: $method;
-	box-sizing: $method;
+	@include prefix-selector(box-sizing, $method);
 
 	// Using Modernizr for Win/IE7 and lower
 	.lte7 & {
 		box-sizing: $method;
-		behavior: url(/htc/boxsizing.htc);
+		behavior: url(/themes/base/htc/boxsizing.htc);
 	}
 }
 
@@ -94,39 +85,7 @@
 // ---------------------------------------------
 
 @mixin rotate($deg: 0) {
-	-webkit-transform: rotate(#{$deg}deg); 	// Safari 3.1+, Chrome 
-	-moz-transform: rotate(#{$deg}deg);  	// Firefox 3.5-15 
-	-ms-transform: rotate(#{$deg}deg);  	// IE9+ 
-	-o-transform: rotate(#{$deg}deg);  	 	// Opera 10.5-12.00 
-	transform: rotate(#{$deg}deg);  		// Firefox 16+, Opera 12.50+
-}
-
-// ---------------------------------------------
-// Columns
-// ---------------------------------------------
-
-@mixin column-count($columns) {
-	-webkit-column-count: $columns;
-	-moz-column-count: $columns;
-	-ms-column-count: $columns;
-	-o-column-count: $columns;
-	column-count: $columns;
-}
-
-@mixin column-gap($width: 15px) {
-	-webkit-column-gap: $width;
-	-moz-column-gap: $width;
-	-ms-column-gap: $width;
-	-o-column-gap: $width;
-	column-gap: $width;
-}
-
-@mixin column-span($span: all) {
-	-webkit-column-span: $span;
-	-moz-column-span: $span;
-	-ms-column-span: $span;
-	-o-column-span: $span;
-	column-span: $span;
+	@include prefix-selector(transform, rotate(#{$deg}deg));
 }
 
 // ---------------------------------------------
@@ -148,12 +107,18 @@
 
 // ---------------------------------------------
 // Vendor prefixes
-// var $vendor-prefixes is set in _config.scss
+// var $vendor-prefixes is listed in _config.scss
 // ---------------------------------------------
 
-@mixin prefix($property, $value) { 
+@mixin prefix-selector($property, $value) { 
 	@each $prefix in $vendor-prefixes {
 		#{$prefix}#{$property}: #{$value};
+	}
+}
+
+@mixin prefix-value($property, $value) {
+	@each $prefix in $vendor-prefixes {
+		#{$property}: #{$prefix}#{$value};
 	}
 }
 
@@ -190,34 +155,6 @@
 }
 
 // ---------------------------------------------
-// Flexbox
-// ---------------------------------------------
-
-@mixin display-box {
-	display: -moz-box;
-	display: -webkit-box;
-	display: -ms-box;
-	display: -o-box;
-	display: box;
-}
-
-@mixin box-orient($direction: vertical) {
-	-moz-box-orient: $direction;
-	-webkit-box-orient: $direction;	
-	-ms-box-orient: $direction;	
-	-o-box-orient: $direction;	
-	box-orient: $direction;
-}
-
-@mixin box-order-group($int) {
-	-moz-box-ordinal-group: $int;
-	-webkit-box-ordinal-group: $int;
-	-ms-box-ordinal-group: $int;
-	-o-box-ordinal-group: $int;
-	box-ordinal-group: $int;
-}
-
-// ---------------------------------------------
 // Background adaptive images (Modernizr)
 // ---------------------------------------------
 
@@ -250,4 +187,32 @@
 	      	background-repeat: no-repeat;
 	  	}
   	}
+}
+
+// ---------------------------------------------
+// Respond to imaginary device category name with MediaQuery
+// var $mq-breakpoint-## is listed in _config.scss
+// ---------------------------------------------
+
+@mixin respond-to($device-type) {
+	@if $device-type == device-smartphone {
+		@media (max-width: $mq-breakpoint-01) { @content; }
+	} 
+	@else if $device-type == device-tablet {
+		@media (min-width: $mq-breakpoint-01) and (max-width: $mq-breakpoint-03) { @content; }
+	} 
+	@else if $device-type == device-desktop {
+		@media (min-width: $mq-breakpoint-03) and (max-width: $mq-breakpoint-04) { @content; }
+	} 
+	@else if $device-type == device-wide {
+		@media (min-width: $mq-breakpoint-04) { @content; }
+	}
+	@else if $device-type == device-high-pixel-ratio {
+		@media (-webkit-min-device-pixel-ratio: 1.5), 
+			(-moz-min-device-pixel-ratio: 1.5), 
+			(-o-min-device-pixel-ratio: 3/2),
+			(min-device-pixel-ratio: 1.5) {
+				@content; 
+		}
+	}
 }

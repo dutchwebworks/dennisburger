@@ -77,12 +77,12 @@
 	.colSplit4,
 	.colSplit5,
 	.colSplit6 {
-		@include column-gap($grid-gutter-width);
+		@include prefix-selector(column-gap, $grid-gutter-width);
 	}
 
-	.colSplit2 { @include column-count(2); }
-	.colSplit3 { @include column-count(3); }
-	.colSplit4 { @include column-count(4); }
-	.colSplit5 { @include column-count(5); }
-	.colSplit6 { @include column-count(6); }
+	.colSplit2 { @include prefix-selector(column-gap, 2); }
+	.colSplit3 { @include prefix-selector(column-gap, 3); }
+	.colSplit4 { @include prefix-selector(column-gap, 4); }
+	.colSplit5 { @include prefix-selector(column-gap, 5); }
+	.colSplit6 { @include prefix-selector(column-gap, 6); }
 }
