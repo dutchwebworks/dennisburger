@@ -90,6 +90,9 @@
 
 // ---------------------------------------------
 // @font-face
+// var $font-dir is listed in _config.scss
+// Don't forget to add the proper mime-types 
+// for these font files in the web server config
 // ---------------------------------------------
 
 @mixin font-face($font-name, $font-file) {
