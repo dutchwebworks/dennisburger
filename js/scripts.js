@@ -83,39 +83,74 @@ function modernizrPNGfallback(){
 // body:after 'device' categor css loading HTML5 data-* attribute
 ================================================ */
 
+var deviceCategory;
+var deviceCategorySequence;
+
 var deviceTabletLoaded = false;
 var deviceDesktopLoaded = false;
 var deviceWideLoaded = false;
 
-function checkDeviceCategory () {
-	var deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	var deviceCategorySequence = ['"device-smartphone"', '"device-tablet"', '"device-desktop"', '"device-wide"'];
+function checkDeviceCategory() {
+	deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+	deviceCategorySequence = ['"device-smartphone"', '"device-tablet"', '"device-desktop"', '"device-wide"'];
+	var deviceKey = deviceCategorySequence.indexOf(deviceCategory);
 
-	// console.log(deviceCategory);
-	// console.log(deviceCategorySequence);
-	// console.log(deviceCategorySequence.indexOf(deviceCategory));
+	// console.log(deviceKey);
 
-	// Tablet
-	if (!deviceTabletLoaded && deviceCategory.indexOf("device-tablet") !=-1) {
+	// Based on deviceKey, load subsequent fragments
+	switch(deviceKey) {
+		case 1:
+			loadTabletFragments();
+			// console.log('case tablet loaded');
+			break;
+		case 2:
+			loadTabletFragments();
+			loadDesktopFragments();
+			// console.log('case tablet and desktop loaded');
+			break;
+		case 3:
+			loadTabletFragments();
+			loadDesktopFragments();
+			loadWideFragments();
+			// console.log('case tablet, desktop and wide loaded');
+			break;
+		default:
+			// console.log('switch default');
+	}
+}
+
+// Tablet
+function loadTabletFragments() {
+	// if (!deviceTabletLoaded && deviceCategory.indexOf("device-tablet") !=-1) {
+	if (!deviceTabletLoaded) {
 		$('[data-device-tablet]').each(function(){
 			$(this).load($(this).data('device-tablet'));
 			deviceTabletLoaded = true;
 		});
 	}
+	// console.log('tablet loaded');
+}
 
-	// Desktop
-	if (!deviceDesktopLoaded && deviceCategory.indexOf("device-desktop") !=-1) {
+// Desktop
+function loadDesktopFragments() {
+	// if (!deviceDesktopLoaded && deviceCategory.indexOf("device-desktop") !=-1) {
+	if (!deviceDesktopLoaded) {
 		$('[data-device-desktop]').each(function(){
 			$(this).load($(this).data('device-desktop'));
 			deviceDesktopLoaded = true;
 		});
 	}
+	// console.log('desktop loaded');
+}
 
-	// Wide (screen)
-	if (!deviceWideLoaded && deviceCategory.indexOf("device-wide") !=-1) {
+// Wide (screens)
+function loadWideFragments() {
+	// if (!deviceWideLoaded && deviceCategory.indexOf("device-wide") !=-1) {
+	if (!deviceWideLoaded) {
 		$('[data-device-wide]').each(function(){
 			$(this).load($(this).data('device-wide'));
 			deviceWideLoaded = true;
 		});
 	}
+	// console.log('wide loaded');
 }

@@ -26,6 +26,11 @@ body {
 			content: "device-smartphone";
 			display: none;
 		}
+
+		// hide larger viewport items
+		[data-device-tablet] { display: none; }
+		[data-device-desktop] { display: none; }
+		[data-device-wide] { display: none; }
 	}
 
 	@include respond-to(device-tablet) {
@@ -33,6 +38,10 @@ body {
 			content: "device-tablet";
 			display: none;
 		}
+
+		// hide larger viewport items
+		[data-device-desktop] { display: none; }
+		[data-device-wide] { display: none; }
 	}
 
 	@include respond-to(device-desktop) {
@@ -40,6 +49,9 @@ body {
 			content: "device-desktop";
 			display: none;
 		}
+
+		// hide larger viewport items
+		[data-device-wide] { display: none; }
 	}
 
 	@include respond-to(device-wide) {
@@ -226,6 +238,10 @@ a {
 .block {
 	padding-left: 1em;
 	padding-right: 1em;
+
+	img {
+		width: 100%;
+	}
 }
 
 .photoCarousel ul {
