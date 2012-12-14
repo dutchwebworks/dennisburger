@@ -58,6 +58,7 @@ Modernizr.load([
 			}, true).listen();
 			*/
 
+			// Check for device 'category' and add a window.event handler to the same function
 			$(window).resize(function() { checkDeviceCategory(); });
 			checkDeviceCategory();
 	    }
@@ -88,33 +89,33 @@ var deviceWideLoaded = false;
 
 function checkDeviceCategory () {
 	var deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	// var deviceDataPrefix = 'device-';
-	// var deviceCategorySequence = [deviceDataPrefix + 'smartphone', deviceDataPrefix + 'tablet', deviceDataPrefix + 'desktop', deviceDataPrefix + 'wide'];
+	var deviceCategorySequence = ['"device-smartphone"', '"device-tablet"', '"device-desktop"', '"device-wide"'];
 
-	if (!deviceTabletLoaded) {
-		if (deviceCategory.indexOf("device-tablet") !=-1) {
-			$('[data-device-tablet]').each(function(){
-				$(this).load($(this).data('device-tablet'));
-				deviceTabletLoaded = true;
-			});
-		};		
+	// console.log(deviceCategory);
+	// console.log(deviceCategorySequence);
+	// console.log(deviceCategorySequence.indexOf(deviceCategory));
+
+	// Tablet
+	if (!deviceTabletLoaded && deviceCategory.indexOf("device-tablet") !=-1) {
+		$('[data-device-tablet]').each(function(){
+			$(this).load($(this).data('device-tablet'));
+			deviceTabletLoaded = true;
+		});
 	}
 
-	if (!deviceDesktopLoaded) {
-		if (deviceCategory.indexOf("device-desktop") !=-1) {
-			$('[data-device-desktop]').each(function(){
-				$(this).load($(this).data('device-desktop'));
-				deviceDesktopLoaded = true;
-			});
-		};
+	// Desktop
+	if (!deviceDesktopLoaded && deviceCategory.indexOf("device-desktop") !=-1) {
+		$('[data-device-desktop]').each(function(){
+			$(this).load($(this).data('device-desktop'));
+			deviceDesktopLoaded = true;
+		});
 	}
 
-	if (!deviceWideLoaded) {
-		if (deviceCategory.indexOf("device-wide") !=-1) {
-			$('[data-device-wide]').each(function(){
-				$(this).load($(this).data('device-wide'));
-				deviceWideLoaded = true;
-			});
-		};
+	// Wide (screen)
+	if (!deviceWideLoaded && deviceCategory.indexOf("device-wide") !=-1) {
+		$('[data-device-wide]').each(function(){
+			$(this).load($(this).data('device-wide'));
+			deviceWideLoaded = true;
+		});
 	}
 }
