@@ -195,20 +195,25 @@
 // ---------------------------------------------
 // Respond to imaginary device category name with MediaQuery
 // var $mq-breakpoint-## is listed in _config.scss
+// Including Win/IE8 and lower fall-back that don't understand MediaQueries
 // ---------------------------------------------
 
 @mixin respond-to($device-type) {
 	@if $device-type == device-smartphone {
 		@media (max-width: $mq-breakpoint-01) { @content; }
+		.lte8 & { @content; }
 	} 
 	@else if $device-type == device-tablet {
 		@media (min-width: $mq-breakpoint-01) and (max-width: $mq-breakpoint-03) { @content; }
+		.lte8 & { @content; }
 	} 
 	@else if $device-type == device-desktop {
 		@media (min-width: $mq-breakpoint-03) and (max-width: $mq-breakpoint-04) { @content; }
+		.lte8 & { @content; }
 	} 
 	@else if $device-type == device-wide {
 		@media (min-width: $mq-breakpoint-04) { @content; }
+		.lte8 & { @content; }
 	}
 	@else if $device-type == device-high-pixel-ratio {
 		@media (-webkit-min-device-pixel-ratio: 1.5), 
