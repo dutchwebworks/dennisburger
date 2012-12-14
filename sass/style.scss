@@ -14,7 +14,39 @@ body {
 	background-color: #eee;
 
 	@media (min-width: $site-max-width) {
-		background: url(../img/cubic-bg.jpg) fixed repeat 0 0;
+		background: url(../img/cubic-bg.jpg) repeat 0 0;
+	}
+
+	// Add a 'keyword' to the body-tag :after selector
+	// for Javascript to pick it up
+	// for responsive-design ajax loading
+	// of additional content
+	@include respond-to(device-smartphone) {
+		&:after {
+			content: "device-smartphone";
+			display: none;
+		}
+	}
+
+	@include respond-to(device-tablet) {
+		&:after {
+			content: "device-tablet";
+			display: none;
+		}
+	}
+
+	@include respond-to(device-desktop) {
+		&:after {
+			content: "device-desktop";
+			display: none;
+		}
+	}
+
+	@include respond-to(device-wide) {
+		&:after {
+			content: "device-wide";
+			display: none;
+		}
 	}
 }
 
@@ -85,7 +117,7 @@ a {
 	overflow:hidden;
 
 	@media (min-width: $site-max-width) {
-		width: $site-max-width;
+		// width: $site-max-width;
 	}	
 }
 

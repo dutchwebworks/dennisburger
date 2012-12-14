@@ -25,6 +25,7 @@ Modernizr.load([
     	load: "/js/libs/enquire.min.js",
 
 	    complete: function () {
+	    	/*
 			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
 			    match : function() {},
 			    unmatch : function() {
@@ -55,6 +56,10 @@ Modernizr.load([
 			    	});			    	
 			    }
 			}, true).listen();
+			*/
+
+			$(window).resize(function() { checkDeviceCategory(); });
+			checkDeviceCategory();
 	    }
 	}
 ]);
@@ -70,5 +75,46 @@ function modernizrPNGfallback(){
 	    images.each(function(i) {
 	      $(this).attr('src', $(this).data('png-fallback'));
 	    });
+	}
+}
+
+/* Load additional content using Ajax based on 
+// body:after 'device' categor css loading HTML5 data-* attribute
+================================================ */
+
+var tabletLoaded = false;
+var tabletDesktop = false;
+var tabletWide = false;
+
+function checkDeviceCategory () {
+	var deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+	// var deviceDataPrefix = 'device-';
+	// var deviceCategorySequence = [deviceDataPrefix + 'smartphone', deviceDataPrefix + 'tablet', deviceDataPrefix + 'desktop', deviceDataPrefix + 'wide'];
+
+	if (!tabletLoaded) {
+		if (deviceCategory.indexOf("device-tablet") !=-1) {
+			$('[data-device-tablet]').each(function(){
+				$(this).load($(this).data('device-tablet'));
+				tabletLoaded = true;
+			});
+		};		
+	}
+
+	if (!tabletDesktop) {
+		if (deviceCategory.indexOf("device-desktop") !=-1) {
+			$('[data-device-desktop]').each(function(){
+				$(this).load($(this).data('device-desktop'));
+				tabletDesktop = true;
+			});
+		};
+	}
+
+	if (!tabletWide) {
+		if (deviceCategory.indexOf("device-wide") !=-1) {
+			$('[data-device-wide]').each(function(){
+				$(this).load($(this).data('device-wide'));
+				tabletWide = true;
+			});
+		};
 	}
 }

@@ -35,10 +35,10 @@ $color-selection: #fe57a1;
 // MediaQuery breakpoints
 // ---------------------------------------------
 
-$mq-breakpoint-01: 321px;
-$mq-breakpoint-02: 500px;
-$mq-breakpoint-03: 781px;
-$mq-breakpoint-04: 1025px;
+$mq-breakpoint-01: 321px; 	// smartphone
+$mq-breakpoint-02: 500px;	// tablet
+$mq-breakpoint-03: 781px;	// desktop
+$mq-breakpoint-04: 1025px;	// wide
 
 // ---------------------------------------------
 // Vars
