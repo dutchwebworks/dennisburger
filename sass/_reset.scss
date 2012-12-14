@@ -1,20 +1,417 @@
 // CSS reset
-html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dt, dd, li { margin-top: 0; padding-top: 0; }
-h1, h2, h3, h4, h5, h6 { line-height: normal; }
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-svg:not(:root) { overflow: hidden; }
-figure { margin: 0; }
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-textarea { overflow: auto; vertical-align: top; resize: vertical; }
-input:valid, textarea:valid {  }
-input:invalid, textarea:invalid { background-color: #f0dddd; }
-table { border-collapse: collapse; border-spacing: 0; }
-td { vertical-align: top; }
-td, th { text-align: left; }
-blockquote, blockquote p { font-style: italic; }
+
+/* Normalize.css
+============================================================= */
+
+html {
+	font-size: 100%;
+	overflow-y: scroll;
+	@include prefix-selector("text-size-adjust", 100%);
+}
+
+body {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.231;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+audio,
+canvas,
+video {
+	display: inline-block;
+
+	.ie6 & {
+		display: inline;
+		zoom: 1;
+	}
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+[hidden] {
+	display: none;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: sans-serif;
+	color: #222;
+}
+
+::-moz-selection {
+	background: $color-selection;
+	color: #fff;
+	text-shadow: none;
+}
+
+::selection {
+	background: $color-selection;
+	color: #fff;
+	text-shadow: none;
+}
+
+a {
+	color: #00e;
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+
+	&:hover {
+		color: #06e;
+	}
+
+	&:visited {
+		color: #551a8b;		
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+blockquote {
+	margin: 1em 40px;
+}
+
+dfn {
+	font-style: italic;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+ins {
+	background: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+
+	.ie6 & {
+		font-family: "courier new", monospace;
+	}
+}
+
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+q {
+	quotes: none;
+
+	&:before,
+	&:after {
+		content: "";
+		content: none;
+	}
+}
+
+
+small {
+	font-size: 85%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+ul,
+ol {
+	margin: 1em 0;
+	padding: 0 0 0 40px;
+}
+
+dd {
+	margin: 0 0 0 40px;
+}
+
+nav {
+	ol,
+	ul {
+		list-style: none;
+		list-style-image: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+
+	.ie & {
+		-ms-interpolation-mode: bicubic;
+	}
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 0;
+}
+
+form {
+	margin: 0;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+
+	.ie6 & {
+		margin-left: -7px;
+	}
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline;
+
+	.ie6 & {
+		vertical-align: middle;
+	}
+}
+
+button,
+input {
+	line-height: normal;
+
+	.ie6 & {
+		overflow: visible;
+	}
+}
+
+.ie6 table {
+	button,
+	input {
+		overflow: auto;
+	}
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	@include prefix-selector("appearance", button);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	@include box-sizing;
+}
+
+input[type="search"] {
+	@include prefix-selector("appearance", textfield);
+	@include prefix-selector("box-sizing", content-box);
+}
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+
+input:invalid,
+textarea:invalid {
+	background-color: #f0dddd;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+::-webkit-input-placeholder,
+:-moz-placeholder {
+	color: #666;
+}
+
+button {
+	width: auto;
+	overflow: visible;
+}
+
+.ie7 img {
+	-ms-interpolation-mode: bicubic;
+}
+
+body,
+select,
+input,
+textarea {
+	color: #444;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+
+a {
+	&:active,
+	&:visited {
+		color: #607890;
+	}
+
+	&:hover {
+		color: #036;
+	}
+}
+
+.ir {
+	display: block;
+	text-indent: -999em;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	text-align: left;
+	direction: ltr;
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.visuallyhidden.focusable {
+	&:active,
+	&:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.clearfix {
+	@include clear;
+}
+
+input[type="search"] {
+	@include prefix-selector("appearance","textfield");
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+/* Win/IE10+ */
+::-ms-clear {
+	display: none;
+}
