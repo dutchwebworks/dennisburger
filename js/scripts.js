@@ -92,13 +92,14 @@ var deviceWideLoaded = false;
 
 function checkDeviceCategory() {
 	deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	deviceCategorySequence = ['"device-smartphone"', '"device-tablet"', '"device-desktop"', '"device-wide"'];
-	var deviceKey = deviceCategorySequence.indexOf(deviceCategory);
+	deviceCategory = deviceCategory.replace('"', '', 'g');
+	deviceCategory = deviceCategory.replace('"', '', 'g');
+	deviceCategorySequence = ['device-smartphone', 'device-tablet', 'device-desktop', 'device-wide'];
 
-	// console.log(deviceKey);
+	var deviceCategoryKey = deviceCategorySequence.indexOf(deviceCategory);
 
 	// Based on deviceKey, load subsequent fragments
-	switch(deviceKey) {
+	switch(deviceCategoryKey) {
 		case 1:
 			loadTabletFragments();
 			// console.log('case tablet loaded');
@@ -121,7 +122,6 @@ function checkDeviceCategory() {
 
 // Tablet
 function loadTabletFragments() {
-	// if (!deviceTabletLoaded && deviceCategory.indexOf("device-tablet") !=-1) {
 	if (!deviceTabletLoaded) {
 		$('[data-device-tablet]').each(function(){
 			$(this).load($(this).data('device-tablet'));
@@ -133,7 +133,6 @@ function loadTabletFragments() {
 
 // Desktop
 function loadDesktopFragments() {
-	// if (!deviceDesktopLoaded && deviceCategory.indexOf("device-desktop") !=-1) {
 	if (!deviceDesktopLoaded) {
 		$('[data-device-desktop]').each(function(){
 			$(this).load($(this).data('device-desktop'));
@@ -145,7 +144,6 @@ function loadDesktopFragments() {
 
 // Wide (screens)
 function loadWideFragments() {
-	// if (!deviceWideLoaded && deviceCategory.indexOf("device-wide") !=-1) {
 	if (!deviceWideLoaded) {
 		$('[data-device-wide]').each(function(){
 			$(this).load($(this).data('device-wide'));
