@@ -58,7 +58,8 @@ Modernizr.load([
 			}, true).listen();
 			*/
 
-			// Check for device 'category' and add a window.event handler to the same function
+			// Add a event listner to check for CSS body:after generated 'content'
+			// to match imaginary device 'keyword', see below
 			$(window).resize(function() { checkDeviceCategory(); });
 			checkDeviceCategory();
 	    }
@@ -67,7 +68,7 @@ Modernizr.load([
 
 // FUNCTIONS
 
-/*	p80jq_modernizrPNGfallback, Swap inline .svg image with HTML5 data-png-fallback attribute .png fallback in unsupported browsers
+/*	modernizrPNGfallback, Swap inline .svg image with HTML5 data-png-fallback attribute .png fallback in unsupported browsers
 ============================================================= */
 
 function modernizrPNGfallback(){
@@ -79,27 +80,39 @@ function modernizrPNGfallback(){
 	}
 }
 
-/* Load additional content using Ajax based on 
-// body:after 'device' categor css loading HTML5 data-* attribute
-================================================ */
+/* Load in additional HTML fragments based on device category 'keyword', set by CSS3 MediaQuery viewport width
+============================================================= */
 
-var deviceCategory;
-var deviceCategorySequence;
+// A CSS3 MediaQuery sets the body:after CSS generated 'content' to an imaginary 
+// device category 'keyword' like 'device-smartphone', 'device-tablet', 'device-desktop' or 'device-wide'
+// based custom CSS 'breakpoints'. Javasript then reads that 'keyword' onLoad() (see above) and uses a 
+// window.resize() eventhandler to load in additional HTML fragments (using Ajax) based on the URL in a 
+// HTML5 data-attribute div, like so: <div data-device-desktop="/fragments/social-media.html"></div>
+// the contents of the URL is appended to the div mathing the 'keyword' when CSS applies this keyword
+// to the body:after generated 'content'
 
+// Set vars and a list of device category names matching CSS's body:after CSS generated 'content:' list
+var deviceCategory, deviceCategorySequence = ['device-smartphone', 'device-tablet', 'device-desktop', 'device-wide'];
+
+// Device related content is not loaded in (once) by default, 'mobile-first'!
 var deviceTabletLoaded = false;
 var deviceDesktopLoaded = false;
 var deviceWideLoaded = false;
 
 function checkDeviceCategory() {
+	// Get the CSS device category 'keyword' from CSS body:after generated 'content'
 	deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	deviceCategory = deviceCategory.replace('"', '', 'g');
-	deviceCategory = deviceCategory.replace('"', '', 'g');
-	deviceCategorySequence = ['device-smartphone', 'device-tablet', 'device-desktop', 'device-wide'];
+	deviceCategory = deviceCategory.replace('"', '', 'g'); // For Safari and Chrome, strip the quotes, or it won't match in 'indexOf' below
+	deviceCategory = deviceCategory.replace('"', '', 'g'); // For Opera strip it again (for some weird reason)
 
+	// Get the array 'key' back from the match above
 	var deviceCategoryKey = deviceCategorySequence.indexOf(deviceCategory);
 
-	// Based on deviceKey, load subsequent fragments
+	// Based on 'deviceCategoryKey', load subsequent HTML fragments
+	// the higher the key (that is: wider viewport), load the lower key (smaller viewport) stuff to
 	switch(deviceCategoryKey) {
+		case 0:
+			break;
 		case 1:
 			loadTabletFragments();
 			// console.log('case tablet loaded');
@@ -116,11 +129,16 @@ function checkDeviceCategory() {
 			// console.log('case tablet, desktop and wide loaded');
 			break;
 		default:
+			// If the browser can't read the CSS generated body:after 'content' keyword
+			// load in everything by default, mostly for browsers that don't support CSS3 MediaQueries
+			loadTabletFragments();
+			loadDesktopFragments();
+			loadWideFragments();
 			// console.log('switch default');
 	}
 }
 
-// Tablet
+// Load 'tablet' fragments once
 function loadTabletFragments() {
 	if (!deviceTabletLoaded) {
 		$('[data-device-tablet]').each(function(){
@@ -131,7 +149,7 @@ function loadTabletFragments() {
 	// console.log('tablet loaded');
 }
 
-// Desktop
+// Load 'desktop' fragments once
 function loadDesktopFragments() {
 	if (!deviceDesktopLoaded) {
 		$('[data-device-desktop]').each(function(){
@@ -142,7 +160,7 @@ function loadDesktopFragments() {
 	// console.log('desktop loaded');
 }
 
-// Wide (screens)
+// Load 'wide' (screen) fragments once
 function loadWideFragments() {
 	if (!deviceWideLoaded) {
 		$('[data-device-wide]').each(function(){

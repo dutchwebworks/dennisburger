@@ -17,17 +17,20 @@ body {
 		background: url(../img/cubic-bg.jpg) repeat 0 0;
 	}
 
-	// Add a 'keyword' to the body-tag :after selector
-	// for Javascript to pick it up
-	// for responsive-design ajax loading
-	// of additional content
+	// Add an imaginary device category 'keyword' 
+	// to the body:after CSS generated 'content'.
+	// Javascript reads the 'keyword' and loads in
+	// additional HTML fragments based on:
+	// <div data-device-desktop="/fragments/social-media.html"></div> 
+	// when the 'keyword' matches. 
+	// And hide these div elements again when the viewport is smaller
 	@include respond-to(device-smartphone) {
 		&:after {
 			content: "device-smartphone";
 			display: none;
 		}
 
-		// hide larger viewport items
+		// Hide for wider viewports
 		[data-device-tablet] { display: none; }
 		[data-device-desktop] { display: none; }
 		[data-device-wide] { display: none; }
@@ -39,7 +42,7 @@ body {
 			display: none;
 		}
 
-		// hide larger viewport items
+		// Hide for wider viewports
 		[data-device-desktop] { display: none; }
 		[data-device-wide] { display: none; }
 	}
@@ -50,7 +53,7 @@ body {
 			display: none;
 		}
 
-		// hide larger viewport items
+		// Hide for wider viewports
 		[data-device-wide] { display: none; }
 	}
 
