@@ -58,9 +58,13 @@ Modernizr.load([
 			}, true).listen();
 			*/
 
-			// Add a event listner to check for CSS body:after generated 'content'
-			// to match imaginary device 'keyword', see below
-			$(window).resize(function() { checkDeviceCategory(); });
+			try {
+				// Add a event listner to check for CSS body:after generated 'content'
+				// to match imaginary device 'keyword', see below
+				$(window).resize(function() { checkDeviceCategory(); });
+			} catch(e) {}
+
+			// Run it onLoad()
 			checkDeviceCategory();
 	    }
 	}
@@ -100,13 +104,15 @@ var deviceDesktopLoaded = false;
 var deviceWideLoaded = false;
 
 function checkDeviceCategory() {
-	// Get the CSS device category 'keyword' from CSS body:after generated 'content'
-	deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	deviceCategory = deviceCategory.replace('"', '', 'g'); // For Safari and Chrome, strip the quotes, or it won't match in 'indexOf' below
-	deviceCategory = deviceCategory.replace('"', '', 'g'); // For Opera strip it again (for some weird reason)
+	try {
+		// Get the CSS device category 'keyword' from CSS body:after generated 'content'
+		deviceCategory = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+		deviceCategory = deviceCategory.replace('"', '', 'g'); // For Safari and Chrome, strip the quotes, or it won't match in 'indexOf' below
+		deviceCategory = deviceCategory.replace('"', '', 'g'); // For Opera strip it again (for some weird reason)
 
-	// Get the array 'key' back from the match above
-	var deviceCategoryKey = deviceCategorySequence.indexOf(deviceCategory);
+		// Get the array 'key' back from the match above
+		var deviceCategoryKey = deviceCategorySequence.indexOf(deviceCategory);
+	} catch(e) {}
 
 	// Based on 'deviceCategoryKey', load subsequent HTML fragments
 	// the higher the key (that is: wider viewport), load the lower key (smaller viewport) stuff to
@@ -136,6 +142,7 @@ function checkDeviceCategory() {
 			loadWideFragments();
 			// console.log('switch default');
 	}
+
 }
 
 // Load 'tablet' fragments once
