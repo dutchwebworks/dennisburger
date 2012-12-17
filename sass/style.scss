@@ -31,9 +31,11 @@ body {
 		}
 
 		// Hide for wider viewports
-		[data-device-tablet] { display: none; }
-		[data-device-desktop] { display: none; }
-		[data-device-wide] { display: none; }
+		[data-device-tablet],
+		[data-device-desktop],
+		[data-device-wide] {
+			display: none; 
+		}
 	}
 
 	@include respond-to(device-tablet) {
@@ -43,8 +45,10 @@ body {
 		}
 
 		// Hide for wider viewports
-		[data-device-desktop] { display: none; }
-		[data-device-wide] { display: none; }
+		[data-device-desktop],
+		[data-device-wide] {
+			display: none; 
+		}
 	}
 
 	@include respond-to(device-desktop) {
@@ -54,13 +58,24 @@ body {
 		}
 
 		// Hide for wider viewports
-		[data-device-wide] { display: none; }
+		[data-device-wide] {
+			display: none;
+		}
 	}
 
 	@include respond-to(device-wide) {
 		&:after {
 			content: "device-wide";
 			display: none;
+		}
+	}
+
+	// Win/IE8 and lower must show the div's
+	.lte8 & {
+		[data-device-tablet],
+		[data-device-desktop],
+		[data-device-wide] {
+			display: block;
 		}
 	}
 }

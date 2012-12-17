@@ -281,7 +281,7 @@ input[type="radio"] {
 .lte7 input[type="checkbox"], .lte7
 input[type="radio"] {
   box-sizing: border-box;
-  behavior: url(/themes/base/htc/boxsizing.htc);
+  behavior: url(/htc/boxsizing.htc);
 }
 
 input[type="search"] {
@@ -457,7 +457,7 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   .lte7 .gridContainer_12 > [class*="grid_"] {
     box-sizing: border-box;
-    behavior: url(/themes/base/htc/boxsizing.htc);
+    behavior: url(/htc/boxsizing.htc);
   }
   .gridContainer_12 > [class*="grid_"]:last-child {
     margin-right: 0;
@@ -680,12 +680,8 @@ body {
     content: "device-smartphone";
     display: none;
   }
-  body [data-device-tablet] {
-    display: none;
-  }
-  body [data-device-desktop] {
-    display: none;
-  }
+  body [data-device-tablet],
+  body [data-device-desktop],
   body [data-device-wide] {
     display: none;
   }
@@ -694,12 +690,8 @@ body {
   content: "device-smartphone";
   display: none;
 }
-.lte8 body [data-device-tablet] {
-  display: none;
-}
-.lte8 body [data-device-desktop] {
-  display: none;
-}
+.lte8 body [data-device-tablet],
+.lte8 body [data-device-desktop],
 .lte8 body [data-device-wide] {
   display: none;
 }
@@ -708,9 +700,7 @@ body {
     content: "device-tablet";
     display: none;
   }
-  body [data-device-desktop] {
-    display: none;
-  }
+  body [data-device-desktop],
   body [data-device-wide] {
     display: none;
   }
@@ -719,9 +709,7 @@ body {
   content: "device-tablet";
   display: none;
 }
-.lte8 body [data-device-desktop] {
-  display: none;
-}
+.lte8 body [data-device-desktop],
 .lte8 body [data-device-wide] {
   display: none;
 }
@@ -750,6 +738,11 @@ body {
 .lte8 body:after {
   content: "device-wide";
   display: none;
+}
+.lte8 body [data-device-tablet],
+.lte8 body [data-device-desktop],
+.lte8 body [data-device-wide] {
+  display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -833,7 +826,7 @@ a {
 #footer {
   zoom: 1;
   -pie-background: linear-gradient(#00aeef, #006489);
-  behavior: url(/themes/base/htc/PIE.htc);
+  behavior: url(/htc/PIE.htc);
 }
 
 /* Header
@@ -897,7 +890,7 @@ a {
 }
 .lte7 #navigation ul li {
   box-sizing: border-box;
-  behavior: url(/themes/base/htc/boxsizing.htc);
+  behavior: url(/htc/boxsizing.htc);
 }
 #navigation ul li:last-child {
   margin-bottom: 0;
