@@ -24,7 +24,7 @@ body {
 	// <div data-device-desktop="/fragments/social-media.html"></div> 
 	// when the 'keyword' matches. 
 	// And hide these div elements again when the viewport is smaller
-	@include respond-to(device-smartphone) {
+	@include respondTo-only(device-smartphone) {
 		&:after {
 			content: "device-smartphone";
 			display: none;
@@ -38,7 +38,7 @@ body {
 		}
 	}
 
-	@include respond-to(device-tablet) {
+	@include respondTo-only(device-tablet) {
 		&:after {
 			content: "device-tablet";
 			display: none;
@@ -51,7 +51,7 @@ body {
 		}
 	}
 
-	@include respond-to(device-desktop) {
+	@include respondTo-only(device-desktop) {
 		&:after {
 			content: "device-desktop";
 			display: none;
@@ -63,7 +63,7 @@ body {
 		}
 	}
 
-	@include respond-to(device-wide) {
+	@include respondTo-only(device-wide) {
 		&:after {
 			content: "device-wide";
 			display: none;

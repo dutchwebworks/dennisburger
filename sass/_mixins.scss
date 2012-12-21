@@ -198,7 +198,8 @@
 // Including Win/IE8 and lower fall-back that don't understand MediaQueries
 // ---------------------------------------------
 
-@mixin respond-to($device-type) {
+// Only specific device category
+@mixin respondTo-only($device-type) {
 	@if $device-type == device-smartphone {
 		@media (max-width: $mq-breakpoint-01) { @content; }
 		.lte8 & { @content; }
@@ -209,6 +210,22 @@
 	} 
 	@else if $device-type == device-desktop {
 		@media (min-width: $mq-breakpoint-03) and (max-width: $mq-breakpoint-04) { @content; }
+		.lte8 & { @content; }
+	} 
+	@else if $device-type == device-wide {
+		@media (min-width: $mq-breakpoint-04) { @content; }
+		.lte8 & { @content; }
+	}
+}
+
+// Minimal divice category width
+@mixin respondTo-minimum($device-type) {
+	@if $device-type == device-tablet {
+		@media (min-width: $mq-breakpoint-01) { @content; }
+		.lte8 & { @content; }
+	} 
+	@else if $device-type == device-desktop {
+		@media (min-width: $mq-breakpoint-03) { @content; }
 		.lte8 & { @content; }
 	} 
 	@else if $device-type == device-wide {
