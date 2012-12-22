@@ -10,11 +10,6 @@
 
 <script src="/js/scripts.js"></script>
 
-<!-- Basic CSS3 MediaQueries for less than Win/IE9 -->
-<!--[if lt IE 9]>
-<script src="/js/libs/respond.1.1.0.min.js"></script>
-<![endif]-->
-
 <?php if($enable_ga) { ?>
 
 <!-- Google Analytics -->
