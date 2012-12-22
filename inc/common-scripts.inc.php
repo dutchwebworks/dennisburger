@@ -6,6 +6,7 @@
 
 <script src="/js/libs/klass.min.js"></script>
 <script src="/js/libs/code.photoswipe-3.0.5.min.js"></script>
+<script src="/js/libs/conditionizr.min.js"></script>
 
 <script src="/js/scripts.js"></script>
 

@@ -1,17 +1,3 @@
-/* jQuery que loader
-================================================ */
-
-$(document).ready(function(){
-	// modernizrPNGfallback();	// Swap inline image .svg with HTML5 data-src attribute .png fallback in unsupported browsers
-});
-
-/* Vars
-================================================ */
-
-// MediaQuery breakpoints
-var mqbreakpoint02 = 600; // SASS var $site-max-width
-var thumbsLoaded = false; // mobile first
-
 /* Modernizr load enquire.js
 ================================================ */
 
@@ -22,42 +8,7 @@ Modernizr.load([
         nope: "/js/libs/respond.1.1.0.min.js"
     },
     {
-    	load: "/js/libs/enquire.min.js",
-
 	    complete: function () {
-	    	/*
-			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
-			    match : function() {},
-			    unmatch : function() {
-			    	$('#navigation').removeAttr('style');
-			    },
-			    // Fire once when ready
-			    setup : function() {
-					$('#showMenu').click(function() {
-						$('#navigation').toggle();
-					});
-			    }
-			}, true).register("(min-width:" + mqbreakpoint02 + "px)", {
-			    match : function() {
-			    	if (!thumbsLoaded) {
-			    		// Grab the 'data-src' attribute and add it as an image
-			    		$('#cvWebsites .site').each(function(){
-			    			if($(this).attr('data-src')) {
-			    				$(this).prepend('<div class="thumb"><a href="' + $(this).attr('data-src') + '"><img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '"></a></div>');
-			    			}
-			    		});
-			    		thumbsLoaded = true;
-			    	}
-
-			    	// Add the Photoswipe gallery to the thumbnails above
-			    	$("#cvWebsites .thumb a").photoSwipe({ 
-			    		enableMouseWheel: false, 
-			    		enableKeyboard: true
-			    	});			    	
-			    }
-			}, true).listen();
-			*/
-
 			try {
 				// Add a event listner to check for CSS body:after generated 'content'
 				// to match imaginary device 'keyword', see below
@@ -66,6 +17,9 @@ Modernizr.load([
 
 			// Run it onLoad()
 			checkDeviceCategory();
+
+			// Conditionizr
+			runConditionizr();
 	    }
 	}
 ]);
@@ -121,18 +75,15 @@ function checkDeviceCategory() {
 			break;
 		case 1:
 			loadTabletFragments();
-			// console.log('case tablet loaded');
 			break;
 		case 2:
 			loadTabletFragments();
 			loadDesktopFragments();
-			// console.log('case tablet and desktop loaded');
 			break;
 		case 3:
 			loadTabletFragments();
 			loadDesktopFragments();
 			loadWideFragments();
-			// console.log('case tablet, desktop and wide loaded');
 			break;
 		default:
 			// If the browser can't read the CSS generated body:after 'content' keyword
@@ -140,7 +91,6 @@ function checkDeviceCategory() {
 			loadTabletFragments();
 			loadDesktopFragments();
 			loadWideFragments();
-			// console.log('switch default');
 	}
 
 }
@@ -153,7 +103,6 @@ function loadTabletFragments() {
 			deviceTabletLoaded = true;
 		});
 	}
-	// console.log('tablet loaded');
 }
 
 // Load 'desktop' fragments once
@@ -164,7 +113,6 @@ function loadDesktopFragments() {
 			deviceDesktopLoaded = true;
 		});
 	}
-	// console.log('desktop loaded');
 }
 
 // Load 'wide' (screen) fragments once
@@ -175,5 +123,27 @@ function loadWideFragments() {
 			deviceWideLoaded = true;
 		});
 	}
-	// console.log('wide loaded');
+}
+
+/* Conditionizr, like Modernizr: adds HTML-tag classes for platform, browsername, (no-)retina
+================================================ */
+
+function runConditionizr() {
+	$('head').conditionizr({
+		ieLessThan : { active: false, version: '9', scripts: false, styles: false, classes: true, customScript: 'none'},
+		chrome     : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		safari     : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		opera      : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		firefox    : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie10       : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie9        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie8        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie7        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie6        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		retina     : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		mac    : true,
+		win    : true,
+		x11    : true,
+		linux  : true
+	});
 }
