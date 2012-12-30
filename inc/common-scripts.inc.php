@@ -9,6 +9,7 @@
 <script src="/js/libs/conditionizr.min.js"></script>
 
 <script src="/js/scripts.js"></script>
+<script src="/js/libs/jquery.loadhtmlfragments.js"></script>
 
 <?php if($enable_ga) { ?>
 
