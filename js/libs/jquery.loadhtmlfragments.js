@@ -3,55 +3,52 @@
 */
 
 window.LoadHTMLFragments = (function( window, document, undefined ) {
-	var options = {
-		deviceSmartphone: 'device-smartphone',
-		deviceTablet: 'device-tablet',
-		deviceDesktop: 'device-desktop',
-		deviceWide: 'device-wide'
-	};
+	var devices 					= {};
+	devices["device-smartphone"] 	= {name:"device-smartphone", loaded: false};
+	devices["device-tablet"] 		= {name:"device-tablet",loaded:false};
+	devices["device-desktop"] 		= {name:"device-desktop",loaded:false};
+	devices["device-wide"] 			= {name:"device-wide",loaded:false};
 
-	loadFragment = function(deviceType, deviceKey) {
-		$('[data-' + deviceType + ']').each(function(){
-			$(this).load($(this).data(deviceType));
-		});
-		console.log(deviceType);
+	loadFragment = function(deviceCategoryType) {
+		var device = devices[deviceCategoryType];
+
+		if(!device.loaded) {
+			$('[data-' + device.name + ']').each(function(){
+				$(this).load($(this).data(device.name));
+				device.loaded = true;
+			});
+		}
 	}
 
 	checkDeviceCategory = function() {
 		try {
-			deviceCategory = this.self.getComputedStyle(document.body,':after').getPropertyValue('content');
+			deviceCategory = this.getComputedStyle(document.body,':after').getPropertyValue('content');
 			deviceCategory = deviceCategory.replace('"', '', 'g');
 			deviceCategory = deviceCategory.replace('"', '', 'g');
 
-			var deviceCategoryKey = deviceCategorySequence.indexOf(deviceCategory);
+			var device = devices[deviceCategory];
 		} catch(e) {}
 
-		console.log(deviceCategoryKey);
-
-		switch(deviceCategoryKey) {
-			case 0:
+		switch(device.name) {
+			case "device-smartphone":
 				break;
-			case 1:
-				loadFragment(options.deviceTablet, deviceCategoryKey);
+			case "device-tablet":
+				loadFragment("device-tablet");
 				break;
-			case 2:
-				loadFragment(options.deviceTablet);
-				loadFragment(options.deviceDesktop);
+			case "device-desktop":
+				loadFragment("device-tablet");
+				loadFragment("device-desktop");
 				break;
-			case 3:
-				loadFragment(options.deviceTablet);
-				loadFragment(options.deviceDesktop);
-				loadFragment(options.deviceWide);
-				break;
+			case "device-wide":
 			default:
-				loadFragment(options.deviceTablet);
-				loadFragment(options.deviceDesktop);
-				loadFragment(options.deviceWide);
+				loadFragment("device-tablet");
+				loadFragment("device-desktop");
+				loadFragment("device-wide");
 		}
 	}
 
 	try {
-		// $(window).resize(function() { checkDeviceCategory(); });
+		 $(this).resize(checkDeviceCategory);
 	} catch(e) {}
 
 	return checkDeviceCategory();
