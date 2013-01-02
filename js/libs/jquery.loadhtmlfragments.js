@@ -3,20 +3,25 @@
 */
 
 window.LoadHTMLFragments = (function( window, document, undefined ) {
-	var devices 					= {};
-	devices["device-smartphone"] 	= {name:"device-smartphone", loaded: false};
-	devices["device-tablet"] 		= {name:"device-tablet",loaded:false};
-	devices["device-desktop"] 		= {name:"device-desktop",loaded:false};
-	devices["device-wide"] 			= {name:"device-wide",loaded:false};
+	var devices = [
+		  {name:"device-smartphone", loaded: false}
+		, {name:"device-tablet",loaded:false, parent: "device-smartphone"}
+		, {name:"device-desktop",loaded:false, parent: "device-tablet"}
+		, {name:"device-wide",loaded:false, parent:"device-desktop"}];
 
 	loadFragment = function(deviceCategoryType) {
-		var device = devices[deviceCategoryType];
+		var device = getDevice(deviceCategoryType);
 
 		if(!device.loaded) {
 			$('[data-' + device.name + ']').each(function(){
 				$(this).load($(this).data(device.name));
 				device.loaded = true;
 			});
+
+			if(device.parent != undefined){
+				loadFragment(device.parent);
+			}
+			
 		}
 	}
 
@@ -26,25 +31,26 @@ window.LoadHTMLFragments = (function( window, document, undefined ) {
 			deviceCategory = deviceCategory.replace('"', '', 'g');
 			deviceCategory = deviceCategory.replace('"', '', 'g');
 
-			var device = devices[deviceCategory];
+			var device = getDevice(deviceCategory);
 		} catch(e) {}
 
-		switch(device.name) {
-			case "device-smartphone":
-				break;
-			case "device-tablet":
-				loadFragment("device-tablet");
-				break;
-			case "device-desktop":
-				loadFragment("device-tablet");
-				loadFragment("device-desktop");
-				break;
-			case "device-wide":
-			default:
-				loadFragment("device-tablet");
-				loadFragment("device-desktop");
-				loadFragment("device-wide");
+		if(device == null){
+			loadFragment("device-wide");
+		}else if(device.name != "device-smartphone"){
+			loadFragment(device.name);
 		}
+	}
+
+	getDevice = function(deviceCategoryType){
+		var i = devices.length;
+
+		while(i--){
+			if(devices[i].name == deviceCategoryType){
+				return devices[i];
+			}
+		}
+
+		return null;
 	}
 
 	try {
@@ -54,3 +60,4 @@ window.LoadHTMLFragments = (function( window, document, undefined ) {
 	return checkDeviceCategory();
 })(this, this.document);
 ;
+
