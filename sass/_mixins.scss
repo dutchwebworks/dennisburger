@@ -10,6 +10,24 @@
 }
 
 // ---------------------------------------------
+// PIE.htc, Win/IE enhancement
+// var $dir-htc is listed in _config.scss
+// ---------------------------------------------
+
+@mixin pieHtc() {
+	behavior: url(#{$dir-htc}PIE.htc);
+}
+
+// ---------------------------------------------
+// boxsizing.htc, Win/IE enhancement
+// var $dir-htc is listed in _config.scss
+// ---------------------------------------------
+
+@mixin boxsizingHtc(){
+	behavior: url(#{$dir-htc}boxsizing.htc);
+}
+
+// ---------------------------------------------
 // Border-radius
 // ---------------------------------------------
 
@@ -21,16 +39,26 @@
 	.lte8 & {
 		zoom: 1;
 		border-radius: $radius;
-		behavior: url(/themes/base/htc/PIE.htc);
+		@include pieHtc;
 	}
 }
 
 // ---------------------------------------------
 // Box-shadow
+// Alas, we can't use the prefix-selector mixin here
 // ---------------------------------------------
 
-@mixin box-shadow($shadow: 0 5px 5px rgba(0,0,0,0.3)) {
-	@include prefix-selector(box-shadow, $shadow);
+@mixin box-shadow($x: 0, $y: 5px, $spread: 5px, $color: #000000, $alpha: 0.5, $inset:"") {
+	-webkit-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+	   -moz-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+	   	-ms-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+	   	 -o-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+	        box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+
+	.lte8 & {
+		box-shadow: #{$inset} $x $y $spread lighten($color, $alpha * 100%);
+		@include pieHtc;
+	}
 }
 
 // ---------------------------------------------
@@ -48,6 +76,7 @@
 
 // ---------------------------------------------
 // Gradients
+// Alas, we can't use the prefix-selector mixin here
 // ---------------------------------------------
 
 @mixin bg-linear-gradient($color1: #ccc, $color2: #000) {
@@ -61,7 +90,7 @@
 	.lte9 & {
 		zoom: 1;
 		-pie-background: linear-gradient($color1, $color2);
-		behavior: url(/themes/base/htc/PIE.htc);
+		@include pieHtc;
 	}
 }
 
@@ -76,7 +105,7 @@
 	// Using Modernizr for Win/IE7 and lower
 	.lte7 & {
 		box-sizing: $method;
-		behavior: url(/themes/base/htc/boxsizing.htc);
+		@include boxsizingHtc;
 	}
 }
 
@@ -90,21 +119,21 @@
 
 // ---------------------------------------------
 // @font-face
-// var $font-dir is listed in _config.scss
+// var $dir-font is listed in _config.scss
 // Don't forget to add the proper mime-types 
 // for these font files in the web server config
 // ---------------------------------------------
 
-@mixin font-face($font-name, $font-file) {
+@mixin font-face($font-name, $font-file, $font-weight: 400, $font-style: 'normal') {
 	@font-face {
 	    font-family: '#{$font-name}';
-	    src: url('#{$font-dir}#{$font-file}.eot');
-	    src: url('#{$font-dir}#{$font-file}.eot?#iefix') format('embedded-opentype'),
-	         url('#{$font-dir}#{$font-file}.woff') format('woff'),
-	         url('#{$font-dir}#{$font-file}.ttf') format('truetype'),
-	         url('#{$font-dir}#{$font-file}.svg##{$font-name}') format('svg');
-	    font-weight: normal;
-	    font-style: normal;	       
+	    src: url('#{$dir-font}#{$font-file}.eot');
+	    src: url('#{$dir-font}#{$font-file}.eot?#iefix') format('embedded-opentype'),
+	         url('#{$dir-font}#{$font-file}.woff') format('woff'),
+	         url('#{$dir-font}#{$font-file}.ttf') format('truetype'),
+	         url('#{$dir-font}#{$font-file}.svg##{$font-file}') format('svg');
+	    font-weight: $font-weight;
+	    font-style: $font-style;
 	}
 }
 
@@ -161,34 +190,33 @@
 // Background adaptive images (Modernizr)
 // ---------------------------------------------
 
-@mixin background-adaptive($file) {
-	.no-svg & {
-		background-image: url($file + '.png');
-		background-repeat: no-repeat;
-	}
-	.svg & {
-      	background-image: url($file + '.svg');
-      	background-repeat: no-repeat;
-  	}
+@mixin background-adaptive($file-name, $file-extension: 'png', $background-size: "50% 50%", $svg-version: false) {
+	background-image: url($file-name + '.' + $file-extension);
+	background-repeat: no-repeat;
 
   	// Target higher density screens
   	// By using a ratio of 1.5 instead of 2, 
   	// you can target other non-Apple devices with the same query.
-  	@media (-webkit-min-device-pixel-ratio: 1.5), 
-  		   (-moz-min-device-pixel-ratio: 1.5), 
-  		   (-o-min-device-pixel-ratio: 3/2),
-  		   (min-device-pixel-ratio: 1.5) {
+  	@media 	(min--moz-device-pixel-ratio: 1.5),
+  			(-o-min-device-pixel-ratio: 3/2),
+  			(-webkit-min-device-pixel-ratio: 1.5),
+  			(min-device-pixel-ratio: 1.5),
+  			(min-resolution: 144dpi),
+  			(min-resolution: 1.5dppx) {
 
 	  	.no-svg & {
-			background-image: url($file + '@2x.png');
+			background-image: url($file-name + '@2x' + '.' + $file-extension);
 			background-repeat: no-repeat;
-			background-size: 100% 100%;
+			background-size: $background-size;
 		}
 
-		.svg & {
-	      	background-image: url($file + '.svg');
-	      	background-repeat: no-repeat;
-	  	}
+		@if $svg-version == true {
+			.svg & {
+				background-image: url($file-name + '.svg');
+				background-repeat: no-repeat;
+				background-size: $background-size;
+		  	}
+		}
   	}
 }
 
@@ -198,7 +226,8 @@
 // Including Win/IE8 and lower fall-back that don't understand MediaQueries
 // ---------------------------------------------
 
-@mixin respond-to($device-type) {
+// Only specific device category
+@mixin respondTo-only($device-type) {
 	@if $device-type == device-smartphone {
 		@media (max-width: $mq-breakpoint-01) { @content; }
 		.lte8 & { @content; }
@@ -209,6 +238,22 @@
 	} 
 	@else if $device-type == device-desktop {
 		@media (min-width: $mq-breakpoint-03) and (max-width: $mq-breakpoint-04) { @content; }
+		.lte8 & { @content; }
+	} 
+	@else if $device-type == device-wide {
+		@media (min-width: $mq-breakpoint-04) { @content; }
+		.lte8 & { @content; }
+	}
+}
+
+// Minimal divice category width
+@mixin respondTo-minimum($device-type) {
+	@if $device-type == device-tablet {
+		@media (min-width: $mq-breakpoint-01) { @content; }
+		.lte8 & { @content; }
+	} 
+	@else if $device-type == device-desktop {
+		@media (min-width: $mq-breakpoint-03) { @content; }
 		.lte8 & { @content; }
 	} 
 	@else if $device-type == device-wide {

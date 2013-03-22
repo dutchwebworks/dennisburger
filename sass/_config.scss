@@ -33,18 +33,20 @@ $color-selection: #fe57a1;
 
 // ---------------------------------------------
 // MediaQuery breakpoints
+// Used by `respondTo-##` @mixin (_mixins.scss)
 // ---------------------------------------------
 
-$mq-breakpoint-01: 321px;
-$mq-breakpoint-02: 500px;
-$mq-breakpoint-03: 781px;
-$mq-breakpoint-04: 1025px;
+$mq-breakpoint-01: 321px; 	// smartphone
+$mq-breakpoint-02: 500px;	// tablet
+$mq-breakpoint-03: 781px;	// desktop
+$mq-breakpoint-04: 1025px;	// wide
 
 // ---------------------------------------------
 // Vars
 // ---------------------------------------------
 
-$font-dir: '../fonts/';
+$dir-font: '../fonts/';
+$dir-htc: '/htc/';
 $site-max-width: 600px;
 
 // Used in _mixins.scss for proprietary web browser prefixes

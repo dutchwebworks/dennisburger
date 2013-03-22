@@ -1,17 +1,3 @@
-/* jQuery que loader
-================================================ */
-
-$(document).ready(function(){
-	// modernizrPNGfallback();	// Swap inline image .svg with HTML5 data-src attribute .png fallback in unsupported browsers
-});
-
-/* Vars
-================================================ */
-
-// MediaQuery breakpoints
-var mqbreakpoint02 = 600; // SASS var $site-max-width
-var thumbsLoaded = false; // mobile first
-
 /* Modernizr load enquire.js
 ================================================ */
 
@@ -22,46 +8,16 @@ Modernizr.load([
         nope: "/js/libs/respond.1.1.0.min.js"
     },
     {
-    	load: "/js/libs/enquire.min.js",
-
 	    complete: function () {
-			enquire.register("(max-width:" + mqbreakpoint02 + "px)", {
-			    match : function() {},
-			    unmatch : function() {
-			    	$('#navigation').removeAttr('style');
-			    },
-			    // Fire once when ready
-			    setup : function() {
-					$('#showMenu').click(function() {
-						$('#navigation').toggle();
-					});
-			    }
-			}, true).register("(min-width:" + mqbreakpoint02 + "px)", {
-			    match : function() {
-			    	if (!thumbsLoaded) {
-			    		// Grab the 'data-src' attribute and add it as an image
-			    		$('#cvWebsites .site').each(function(){
-			    			if($(this).attr('data-src')) {
-			    				$(this).prepend('<div class="thumb"><a href="' + $(this).attr('data-src') + '"><img src="' + $(this).attr('data-src') + '" alt="' + $('h3', this).text() + '"></a></div>');
-			    			}
-			    		});
-			    		thumbsLoaded = true;
-			    	}
-
-			    	// Add the Photoswipe gallery to the thumbnails above
-			    	$("#cvWebsites .thumb a").photoSwipe({ 
-			    		enableMouseWheel: false, 
-			    		enableKeyboard: true
-			    	});			    	
-			    }
-			}, true).listen();
+			// Conditionizr
+			runConditionizr();
 	    }
 	}
 ]);
 
 // FUNCTIONS
 
-/*	p80jq_modernizrPNGfallback, Swap inline .svg image with HTML5 data-png-fallback attribute .png fallback in unsupported browsers
+/*	modernizrPNGfallback, Swap inline .svg image with HTML5 data-png-fallback attribute .png fallback in unsupported browsers
 ============================================================= */
 
 function modernizrPNGfallback(){
@@ -71,4 +27,27 @@ function modernizrPNGfallback(){
 	      $(this).attr('src', $(this).data('png-fallback'));
 	    });
 	}
+}
+
+/* Conditionizr, like Modernizr: adds HTML-tag classes for platform, browsername, (no-)retina
+================================================ */
+
+function runConditionizr() {
+	$('head').conditionizr({
+		ieLessThan : { active: false, version: '9', scripts: false, styles: false, classes: true, customScript: 'none'},
+		chrome     : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		safari     : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		opera      : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		firefox    : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie10       : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie9        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie8        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie7        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		ie6        : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		retina     : { scripts: false, styles: false, classes: true, customScript: 'none' },
+		mac    : true,
+		win    : true,
+		x11    : true,
+		linux  : true
+	});
 }

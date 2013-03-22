@@ -32,8 +32,10 @@ include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php');
 			<h1>Welkom op mijn website</h1>
 		
 			<div class="gridContainer_12">
-				<div class="grid_8">
-					<p>Introductie. Consectetur adipisicing elit, sed do eiusmod
+				<div class="grid_4">
+					<div data-device-tablet="/fragments/tablet.html"></div>
+					<p>
+						Introductie. Consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -43,7 +45,20 @@ include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php');
 				</div>
 
 				<div class="grid_4">
-					<p>Introductie. Consectetur adipisicing elit, sed do eiusmod
+					<div data-device-desktop="/fragments/banner.html"></div>
+					<p>
+						Introductie. Consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+				</div>
+
+				<div class="grid_4">
+					<p>
+						Introductie. Consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					</p>
@@ -56,11 +71,6 @@ include(DOCUMENT_ROOT . '/inc/default-dtd.inc.php');
 </div>
 
 <?php include(DOCUMENT_ROOT . '/inc/common-scripts.inc.php'); ?>
-
-<script>
-// Photoswipe
-$(document).ready(function(){ $(".photoCarousel a").photoSwipe(); });
-</script>
 
 </body>
 </html>

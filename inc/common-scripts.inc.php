@@ -6,13 +6,10 @@
 
 <script src="/js/libs/klass.min.js"></script>
 <script src="/js/libs/code.photoswipe-3.0.5.min.js"></script>
+<script src="/js/libs/conditionizr.min.js"></script>
 
 <script src="/js/scripts.js"></script>
-
-<!-- Basic CSS3 MediaQueries for less than Win/IE9 -->
-<!--[if lt IE 9]>
-<script src="/js/libs/respond.1.1.0.min.js"></script>
-<![endif]-->
+<script src="/js/libs/jquery.loadhtmlfragments.min.js"></script>
 
 <?php if($enable_ga) { ?>
 
