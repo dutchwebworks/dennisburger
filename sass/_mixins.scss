@@ -124,16 +124,16 @@
 // for these font files in the web server config
 // ---------------------------------------------
 
-@mixin font-face($font-name, $font-file) {
+@mixin font-face($font-name, $font-file, $font-weight: 400, $font-style: 'normal') {
 	@font-face {
 	    font-family: '#{$font-name}';
 	    src: url('#{$dir-font}#{$font-file}.eot');
 	    src: url('#{$dir-font}#{$font-file}.eot?#iefix') format('embedded-opentype'),
 	         url('#{$dir-font}#{$font-file}.woff') format('woff'),
 	         url('#{$dir-font}#{$font-file}.ttf') format('truetype'),
-	         url('#{$dir-font}#{$font-file}.svg##{$font-name}') format('svg');
-	    font-weight: normal;
-	    font-style: normal;	       
+	         url('#{$dir-font}#{$font-file}.svg##{$font-file}') format('svg');
+	    font-weight: $font-weight;
+	    font-style: $font-style;
 	}
 }
 
@@ -190,34 +190,33 @@
 // Background adaptive images (Modernizr)
 // ---------------------------------------------
 
-@mixin background-adaptive($file) {
-	.no-svg & {
-		background-image: url($file + '.png');
-		background-repeat: no-repeat;
-	}
-	.svg & {
-      	background-image: url($file + '.svg');
-      	background-repeat: no-repeat;
-  	}
+@mixin background-adaptive($file-name, $file-extension: 'png', $background-size: "50% 50%", $svg-version: false) {
+	background-image: url($file-name + '.' + $file-extension);
+	background-repeat: no-repeat;
 
   	// Target higher density screens
   	// By using a ratio of 1.5 instead of 2, 
   	// you can target other non-Apple devices with the same query.
-  	@media (-webkit-min-device-pixel-ratio: 1.5), 
-  		   (-moz-min-device-pixel-ratio: 1.5), 
-  		   (-o-min-device-pixel-ratio: 3/2),
-  		   (min-device-pixel-ratio: 1.5) {
+  	@media 	(min--moz-device-pixel-ratio: 1.5),
+  			(-o-min-device-pixel-ratio: 3/2),
+  			(-webkit-min-device-pixel-ratio: 1.5),
+  			(min-device-pixel-ratio: 1.5),
+  			(min-resolution: 144dpi),
+  			(min-resolution: 1.5dppx) {
 
 	  	.no-svg & {
-			background-image: url($file + '@2x.png');
+			background-image: url($file-name + '@2x' + '.' + $file-extension);
 			background-repeat: no-repeat;
-			background-size: 100% 100%;
+			background-size: $background-size;
 		}
 
-		.svg & {
-	      	background-image: url($file + '.svg');
-	      	background-repeat: no-repeat;
-	  	}
+		@if $svg-version == true {
+			.svg & {
+				background-image: url($file-name + '.svg');
+				background-repeat: no-repeat;
+				background-size: $background-size;
+		  	}
+		}
   	}
 }
 
