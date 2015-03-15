@@ -1,369 +1,70 @@
-@import '_config.scss';
-
-/* Common
-==================================== */
+@import
+	"_vars",
+	"_mixins";
 
 body {
-	font-family: $font-custom-body;
-	font-size: $font-default-size;
-	font-weight:400;
-	line-height: $font-default-line-height;
-	color: $color-body-text;
-	margin: 0;
+	margin: 1.2rem 0 0 0;
 	padding: 0;
-	background-color: #eee;
+	font-family: 'Open Sans', sans-serif;
+	background-color: $color-01;
+	color: #fff;
+	font-size: 1rem;
 
-	@media (min-width: $site-max-width) {
-		background: url(../img/cubic-bg.jpg) repeat 0 0;
-	}
-
-	// Add an imaginary device category 'keyword' 
-	// to the body:after CSS generated 'content'.
-	// Javascript reads the 'keyword' and loads in
-	// additional HTML fragments based on:
-	// <div data-device-desktop="/fragments/social-media.html"></div> 
-	// when the 'keyword' matches. 
-	// And hide these div elements again when the viewport is smaller
-	@include respondTo-only(device-smartphone) {
-		&:after {
-			content: "device-smartphone";
-			display: none;
-		}
-
-		// Hide for wider viewports
-		[data-device-tablet],
-		[data-device-desktop],
-		[data-device-wide] {
-			display: none; 
-		}
-	}
-
-	@include respondTo-only(device-tablet) {
-		&:after {
-			content: "device-tablet";
-			display: none;
-		}
-
-		// Hide for wider viewports
-		[data-device-desktop],
-		[data-device-wide] {
-			display: none; 
-		}
-	}
-
-	@include respondTo-only(device-desktop) {
-		&:after {
-			content: "device-desktop";
-			display: none;
-		}
-
-		// Hide for wider viewports
-		[data-device-wide] {
-			display: none;
-		}
-	}
-
-	@include respondTo-only(device-wide) {
-		&:after {
-			content: "device-wide";
-			display: none;
-		}
-	}
-
-	// Win/IE8 and lower must show the div's
-	.lte8 & {
-		[data-device-tablet],
-		[data-device-desktop],
-		[data-device-wide] {
-			display: block;
-		}
-	}
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: $font-custom-headings;
-	line-height: normal;
-	font-weight: 700;
-	font-style: italic;
-	color: $color-heading-text;
-}
-
-h2, h3, h4, h5, h6 {
-	margin-top: 1em;
-	margin-bottom: .5em;
-}
-
-h3, h4, h5, h6 {
-	color: $color-complementary;
-}
-
-h2, h3, h4, h5, h6, p, li, dd {
-	&:last-child {
-		margin-bottom: 0;
+	@include mq-tablet {
+		margin-top: 3rem;
+		font-size: 1.5rem; // 24/16
 	}
 }
 
 h1 {
-	font-size: 2em;
-	margin-top: 0.5em;
+	font-family: 'Bree Serif';
+	font-weight: 400;
+	color: $color-02;
+	font-size: 2.5rem;
+
+	@include mq-tablet {
+		font-size: 3.75rem;
+	}
 }
 
-h2 {
-	font-size: 1.75em;
+section {
+	max-width: $mq-desktop;
+	margin: 0 auto;
+	padding: 0 10px;
+	text-align: center;
+	margin-top: 10px;
 }
 
-h1 + h2 {
-	margin-top: 0;
+ul {
+	margin: 0;
+	padding: 0;
 }
 
-h3 {
-	font-size: 1.50em;
-}
+li {
+	list-style: none;
+	
 
-h4, h5, h6 {
-	font-size: 1.25em;
-	color: $color-secondary;
-}
-
-p, li, dt, dd {
-	font-size: 1em;
-}
-
-ul, ol {
-	padding-left: 1.5em;
+	@include mq-tablet {
+		display: block;
+		margin-bottom: 0;
+	}
 }
 
 a {
-	color: $color-primary;
-}
-
-/* Wrapper
-==================================== */
-
-#wrapper {
-	background: #fff;
-	width: auto;
-	margin: 0 auto;
-	overflow:hidden;
-
-	@media (min-width: $site-max-width) {
-		// width: $site-max-width;
-	}	
-}
-
-/* Color gradients
-==================================== */
-
-#header,
-#navigation,
-#footer {
-	@include bg-linear-gradient($color-heading-text, darken($color-heading-text, 20%));
-}
-
-/* Header
-==================================== */
-
-#header {
-	padding: 1em;
-	position: relative;
+	display: block;
+	margin-bottom: 1rem;
 	overflow: hidden;
-
-	h1 {
-		margin: 0;
-		display: block;
-		float: left;
-
-		a {
-			color: #fff;
-			text-decoration:none;
-			text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
-		}
-	}
-
-	#showMenu {
-		display: block;
-		float: right;
-		position:relative;
-		top: .4em;
-	}
-
-	@media (min-width: $site-max-width) {
-		#showMenu {
-			display: none;
-		}
-	}
-}
-
-/* Nav
-==================================== */
-
-#navigation {
-	overflow:hidden;
-	clear: both;
-	padding: 1em 1em;
-
-	display:none;
-
-	@media (min-width: $site-max-width) {
-		display:block;
-	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-
-		li {
-			display: block;
-			width: 100%;
-			padding-bottom: 0.5em;
-			margin-bottom: 0.5em;
-			margin-right: 0.5em;
-			border-bottom: 2px dotted lighten($color-heading-text, 40%);
-			@include box-sizing;
-
-			&:last-child {
-				margin-bottom: 0;
-
-				@media (max-width: $site-max-width) {
-					border-bottom: 0;
-				}
-			}
-
-			a {
-				color: #fff;
-				font-size: 1.3em;
-				text-decoration:none;
-			}
-
-			@media (min-width: $site-max-width) {
-				float: left;
-				width: 48%;
-			}
-		}
-	}
-}
-
-/* Main
-==================================== */
-
-#main {
-	margin-top: 0;
-	margin-bottom: 2em;
-	padding: 0;
-	padding-bottom: 0;
-}
-
-.block {
-	padding-left: 1em;
-	padding-right: 1em;
-
-	img {
-		width: 100%;
-	}
-}
-
-.photoCarousel ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position:  relative;
-	width: 100%;
-	height: 147px;
-	overflow: hidden;
-
-	li {
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	img {
-		width: 100%;
-		min-width: 100%;
-	}
-}
-
-/* CV list
-==================================== */
-
-#cvWebsites {
-	list-style:none;
-	margin:0;
-	padding:0;
-	overflow: hidden;
-
-
-	.site {
-		clear:both;
-		overflow:hidden;
-		margin-bottom: 1em;
-		padding-bottom: 1em;
-		border-bottom: 1px dotted #ccc;
-
-		.thumb {
-			@media (min-width: $site-max-width) {
-				width: 250px;
-				float:left;
-			}
-
-			img {
-				display: none;
-				float: left;
-				margin: 0 1em 0 0;
-				border: 1px solid #ccc;
-
-				@media (min-width: $site-max-width) {
-					display: block;
-				}
-			}		
-		}
-
-		.info {
-			@media (min-width: $site-max-width) {
-				width: 290px;
-				float:right;
-				overflow:hidden;
-			}
-
-			h3 {
-				margin: 0;
-
-				a {
-					color: $color-secondary;
-					text-decoration:none;
-				}
-			}
-
-			ul {
-				overflow:hidden;
-
-				li {
-					margin: 0;
-					padding: 0;
-					line-height:1.2em;
-					font-size:1em;
-				}
-			}
-		}
-
-		&:last-child {
-			margin-bottom: 0;
-			border: 0;
-			margin-bottom: 0;
-			padding-bottom: 0;
-		}		
-	}
-}
-
-/* Footer
-==================================== */
-
-#footer {
-	padding: 1em;
-
-	p {
-		color: #fff;
-		font-size: 0.8em;
-		text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	background-color: #EF8485;
+	text-decoration: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+	-webkit-transition: color .3s, background-color .3s;
+	transition: color .3s, background-color .3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	
+	&:hover {
+		background-color: #d07374;
 	}
 }
