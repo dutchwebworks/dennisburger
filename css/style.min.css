@@ -1,0 +1,8 @@
+/*!
+ * Name: dennis-burger
+ * Author: Dennis Burger <dennis@dutchwebworks.nl>
+ * Version: 1.0.0
+ * Date: 2015-03-15
+ */
+
+a,body{color:#fff}body{margin:0;padding:0;font-family:Arial;background-color:#09687F}h1{margin-top:0}section{max-width:600px;margin:0 auto;text-align:center}ul li{list-style:none}a{text-decoration:none}#items{overflow:hidden}@media (min-width:600px){#items li{width:33%;float:left}}
