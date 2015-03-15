@@ -12,7 +12,7 @@ body {
 
 	@include mq-tablet {
 		margin-top: 3rem;
-		font-size: 1.5rem;
+		font-size: 1.5rem; // 24/16
 	}
 }
 
@@ -30,37 +30,41 @@ h1 {
 section {
 	max-width: $mq-desktop;
 	margin: 0 auto;
+	padding: 0 10px;
 	text-align: center;
+	margin-top: 10px;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
 }
 
 li {
 	list-style: none;
-	margin-bottom: 0.8rem;
+	
 
 	@include mq-tablet {
+		display: block;
 		margin-bottom: 0;
 	}
 }
 
 a {
-	color: $color-02;
-	text-decoration: none;
-
-	&:hover {
-		color: $color-03;
-	}
-}
-
-#items {
+	display: block;
+	margin-bottom: 1rem;
 	overflow: hidden;
-
-	@include mq-tablet {
-		display: flex;
-		justify-content: center;
-
-		li {
-			text-align: center;
-			flex: 1 100%;
-		}
+	color: #fff;
+	background-color: #EF8485;
+	text-decoration: none;
+	border-radius: 10px;
+	padding: 10px 20px;
+	-webkit-transition: color .3s, background-color .3s;
+	transition: color .3s, background-color .3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	
+	&:hover {
+		background-color: #d07374;
 	}
 }
