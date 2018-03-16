@@ -2,37 +2,65 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-	<link href='//fonts.googleapis.com/css?family=Open+Sans:400|Bree+Serif' rel='stylesheet' type='text/css'>
-	<!-- <link rel="stylesheet" href="css/style.min.css"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" value="Personal web site">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 
 	<style>
-		body,ul{padding:0}a,body{color:#fff}body{margin:1.2rem 0 0;font-family:'Open Sans',sans-serif;background-color:#f5f7f9;font-size:1rem}h1{font-family:'Bree Serif';font-weight:400;color:#464b55;font-size:2.5rem}section{max-width:37.5rem;margin:10px auto 0;padding:0 10px;text-align:center}ul{margin:0}li{list-style:none}@media (min-width:25rem){body{margin-top:3rem;font-size:1.5rem}h1{font-size:3.75rem}li{display:block;margin-bottom:0}}a{display:block;margin-bottom:1rem;overflow:hidden;background-color:#EF8485;text-decoration:none;border-radius:10px;padding:10px 20px;-webkit-transition:color .3s,background-color .3s;transition:color .3s,background-color .3s;-webkit-animation-fill-mode:both;animation-fill-mode:both}a:hover{background-color:#d07374}
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100vw;
+			height: 80vh;
+		}
+
+		h1 {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300;
+			font-size: 3em;
+			color: deepskyblue;
+			text-align: center;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+			margin-bottom: 10px;
+			padding: 0;
+		}
+
+		a {
+			display: block;
+			box-sizing: border-box;
+			text-align: center;
+			width: 100%;
+			padding: 10px 30px;
+			border-radius: 10px;
+			color: white;
+			text-decoration: none;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 300;
+			background-color: deeppink;
+		}
 	</style>
 
 	<title>Dennis Burger</title>
 </head>
 <body>
-	<section>
-		<h1>Dennis Burger</h1>
+	<h1>Dennis Burger</h1>
 
-		<ul id="items">
-			<li><a href="https://www.flickr.com/photos/dennisburger">Flickr.com/dennisburger</a></li>
-			<li><a href="https://github.com/dutchwebworks">Github.com/dutchwebworks</a></li>
-			<li><a href="https://codepen.io/dutchwebworks">Codepen.io/dutchwebworks</a></li>
-			<li><a href="http://www.yotosama.com">Yotosama Aikido</a></li>
-		</ul>
-	</section>
-
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-32526017-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
+	<ul>
+		<li><a href="https://www.flickr.com/photos/dennisburger">Flickr.com/dennisburger</a></li>
+		<li><a href="https://github.com/dutchwebworks">Github.com/dutchwebworks</a></li>
+		<li><a href="https://codepen.io/dutchwebworks">Codepen.io/dutchwebworks</a></li>
+		<li><a href="http://www.yotosama.com">Yotosama Aikido</a></li>
+	</ul>
 </body>
 </html>
